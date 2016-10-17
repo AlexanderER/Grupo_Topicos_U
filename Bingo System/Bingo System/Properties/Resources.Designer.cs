@@ -63,6 +63,16 @@ namespace Bingo_System.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_go_next_view_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions_go_next_view_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Actions_window_close_icon {
             get {
                 object obj = ResourceManager.GetObject("Actions_window_close_icon", resourceCulture);
@@ -106,6 +116,16 @@ namespace Bingo_System.Properties {
         internal static System.Drawing.Bitmap Ball_2_icon {
             get {
                 object obj = ResourceManager.GetObject("Ball_2_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_icon {
+            get {
+                object obj = ResourceManager.GetObject("check_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

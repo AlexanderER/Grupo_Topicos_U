@@ -11,9 +11,16 @@ namespace Bingo_System
     {
         #region Variables Globales de Configuracion del Bingo
 
-        public static Int32 iLimiteNumerosBingo = 25;   // Se inicializa en 25 ya que es el numero minimo.
+        // Se inicializa en 25 ya que es el numero minimo.
+        public static Int32 iLimiteNumerosBingo = 25;   
 
-        LogicaNegocio.Logica.MODALIDAD_JUEGO mdModalidadJuego = Logica.MODALIDAD_JUEGO.INDEFINIDO;
+
+        // Indica la Modalidad de Bingo a Jugar
+        public static Logica.MODALIDAD_JUEGO mdModalidadJuego = Logica.MODALIDAD_JUEGO.INDEFINIDO;
+
+
+        // Listado de Numeros Favorecidos (Son los numeros que ya han salido en el sorteo)
+        public static List<Int32> ListaNumerosFavorecidos;
 
         #endregion
     }
