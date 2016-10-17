@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicaNegocio
+namespace Bingo_System.LogicaNegocio
 {
     public class Logica
     {
@@ -15,17 +15,18 @@ namespace LogicaNegocio
         /// </summary>
         public enum MODALIDAD_JUEGO
         {
-            CARTON_LLENO = 0,
-            CUATRO_ESQUINAS = 1,
-            LETRA_H = 2,
-            LETRA_X = 3,
-            LETRA_O = 4,
-            LETRA_U = 5,
-            LETRA_P = 6,
-            LETRA_A = 7,
-            LETRA_E = 8,
-            LETRA_W = 9,
-            LETRA_R = 10
+            INDEFINIDO      = 0,
+            CARTON_LLENO    = 1,
+            CUATRO_ESQUINAS = 2,
+            LETRA_H         = 3,
+            LETRA_X         = 4,
+            LETRA_O         = 5,
+            LETRA_U         = 6,
+            LETRA_P         = 7,
+            LETRA_A         = 8,
+            LETRA_E         = 9,
+            LETRA_W         = 10,
+            LETRA_R         = 11
         }
 
         #endregion

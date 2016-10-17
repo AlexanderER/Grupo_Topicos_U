@@ -98,6 +98,21 @@
   <ItemGroup>
     <None Include="Imagenes\Actions-window-close-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
+      <Project>{8e3594bf-4060-473d-9cf4-aa9bf80c87f2}</Project>
+      <Name>LogicaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Apps-Dialog-Add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Apps-Dialog-Add-icon24p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Apps-Run-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

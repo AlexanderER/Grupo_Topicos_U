@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bingo System", "Bingo System\Bingo System.csproj", "{B7C0CED4-5995-41F3-A30C-843D6C86BA0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E3594BF-4060-473D-9CF4-AA9BF80C87F2} = {8E3594BF-4060-473D-9CF4-AA9BF80C87F2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LogicaNegocio\LogicaNegocio.csproj", "{8E3594BF-4060-473D-9CF4-AA9BF80C87F2}"
 EndProject

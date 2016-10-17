@@ -73,6 +73,36 @@ namespace Bingo_System.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Apps_Dialog_Add_icon {
+            get {
+                object obj = ResourceManager.GetObject("Apps_Dialog_Add_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Apps_Dialog_Add_icon24p {
+            get {
+                object obj = ResourceManager.GetObject("Apps_Dialog_Add_icon24p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Apps_Run_icon {
+            get {
+                object obj = ResourceManager.GetObject("Apps_Run_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ball_2_icon {
             get {
                 object obj = ResourceManager.GetObject("Ball_2_icon", resourceCulture);

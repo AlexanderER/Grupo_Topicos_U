@@ -31,9 +31,18 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.lblNumeros = new System.Windows.Forms.Label();
+            this.nudTechoNumBingo = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxModalidad = new System.Windows.Forms.ComboBox();
+            this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnIniciarJuego = new System.Windows.Forms.Button();
+            this.btnAgregarJugador = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTechoNumBingo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +52,7 @@
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape3,
             this.rectangleShape2,
             this.rectangleShape1});
             this.shapeContainer1.Size = new System.Drawing.Size(825, 443);
@@ -70,6 +80,138 @@
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Bingo";
             // 
+            // rectangleShape2
+            // 
+            this.rectangleShape2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape2.BorderColor = System.Drawing.Color.DarkGray;
+            this.rectangleShape2.CornerRadius = 5;
+            this.rectangleShape2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.rectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
+            this.rectangleShape2.Location = new System.Drawing.Point(14, 80);
+            this.rectangleShape2.Name = "rectangleShape2";
+            this.rectangleShape2.Size = new System.Drawing.Size(795, 42);
+            // 
+            // lblNumeros
+            // 
+            this.lblNumeros.AutoSize = true;
+            this.lblNumeros.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeros.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNumeros.Location = new System.Drawing.Point(23, 90);
+            this.lblNumeros.Name = "lblNumeros";
+            this.lblNumeros.Size = new System.Drawing.Size(196, 18);
+            this.lblNumeros.TabIndex = 58;
+            this.lblNumeros.Text = "Cantidad Números Bingo";
+            this.lblNumeros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // nudTechoNumBingo
+            // 
+            this.nudTechoNumBingo.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudTechoNumBingo.Location = new System.Drawing.Point(225, 90);
+            this.nudTechoNumBingo.Maximum = new decimal(new int[] {
+            75,
+            0,
+            0,
+            0});
+            this.nudTechoNumBingo.Minimum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.nudTechoNumBingo.Name = "nudTechoNumBingo";
+            this.nudTechoNumBingo.ReadOnly = true;
+            this.nudTechoNumBingo.Size = new System.Drawing.Size(82, 20);
+            this.nudTechoNumBingo.TabIndex = 59;
+            this.nudTechoNumBingo.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(417, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 18);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "Modalidad del Juego";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbxModalidad
+            // 
+            this.cbxModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxModalidad.FormattingEnabled = true;
+            this.cbxModalidad.Location = new System.Drawing.Point(586, 89);
+            this.cbxModalidad.Name = "cbxModalidad";
+            this.cbxModalidad.Size = new System.Drawing.Size(198, 21);
+            this.cbxModalidad.TabIndex = 61;
+            // 
+            // rectangleShape3
+            // 
+            this.rectangleShape3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape3.BorderColor = System.Drawing.Color.DarkGray;
+            this.rectangleShape3.CornerRadius = 5;
+            this.rectangleShape3.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.rectangleShape3.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
+            this.rectangleShape3.Location = new System.Drawing.Point(15, 139);
+            this.rectangleShape3.Name = "rectangleShape3";
+            this.rectangleShape3.Size = new System.Drawing.Size(795, 287);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(23, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 18);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Jugadores";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnIniciarJuego
+            // 
+            this.btnIniciarJuego.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnIniciarJuego.FlatAppearance.BorderSize = 0;
+            this.btnIniciarJuego.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciarJuego.ForeColor = System.Drawing.Color.White;
+            this.btnIniciarJuego.Image = global::Bingo_System.Properties.Resources.Apps_Run_icon;
+            this.btnIniciarJuego.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIniciarJuego.Location = new System.Drawing.Point(631, 9);
+            this.btnIniciarJuego.Name = "btnIniciarJuego";
+            this.btnIniciarJuego.Size = new System.Drawing.Size(83, 46);
+            this.btnIniciarJuego.TabIndex = 64;
+            this.btnIniciarJuego.Text = "Iniciar";
+            this.btnIniciarJuego.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIniciarJuego.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarJugador
+            // 
+            this.btnAgregarJugador.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAgregarJugador.FlatAppearance.BorderSize = 0;
+            this.btnAgregarJugador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarJugador.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarJugador.Image = global::Bingo_System.Properties.Resources.Apps_Dialog_Add_icon24p;
+            this.btnAgregarJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarJugador.Location = new System.Drawing.Point(117, 146);
+            this.btnAgregarJugador.Name = "btnAgregarJugador";
+            this.btnAgregarJugador.Size = new System.Drawing.Size(84, 36);
+            this.btnAgregarJugador.TabIndex = 63;
+            this.btnAgregarJugador.Text = "Agregar\r\nJugador";
+            this.btnAgregarJugador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarJugador.UseVisualStyleBackColor = false;
+            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -85,6 +227,7 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pictureBox1
             // 
@@ -96,24 +239,19 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // rectangleShape2
-            // 
-            this.rectangleShape2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShape2.BorderColor = System.Drawing.Color.DarkGray;
-            this.rectangleShape2.CornerRadius = 5;
-            this.rectangleShape2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.rectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
-            this.rectangleShape2.Location = new System.Drawing.Point(14, 80);
-            this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(795, 348);
-            // 
             // frmInicioBingo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 443);
+            this.Controls.Add(this.btnIniciarJuego);
+            this.Controls.Add(this.btnAgregarJugador);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbxModalidad);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nudTechoNumBingo);
+            this.Controls.Add(this.lblNumeros);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
@@ -124,6 +262,8 @@
             this.Name = "frmInicioBingo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bingo System .:. frm001";
+            this.Load += new System.EventHandler(this.frmInicioBingo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudTechoNumBingo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,5 +278,13 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCerrar;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
+        private System.Windows.Forms.Label lblNumeros;
+        private System.Windows.Forms.NumericUpDown nudTechoNumBingo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxModalidad;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAgregarJugador;
+        private System.Windows.Forms.Button btnIniciarJuego;
     }
 }
