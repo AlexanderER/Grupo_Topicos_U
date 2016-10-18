@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Bingo_System.LogicaNegocio;
 
+
 namespace Bingo_System
 {
     class clsGlobal
@@ -22,9 +23,11 @@ namespace Bingo_System
         // Listado de Numeros Favorecidos (Son los numeros que ya han salido en el sorteo)
         public static List<Int32> ListaNumerosFavorecidos;
 
-        #endregion
 
-        private List<clsCarton> listaJugadores;
+        public static List<Clases.clsJugador> ListaJugadores = new List<Clases.clsJugador>();
+
+
+        #endregion
 
         //Recorre lista de cartones y busca ID carton
         public List<clsCarton> buscarJugador(int idJugador)
