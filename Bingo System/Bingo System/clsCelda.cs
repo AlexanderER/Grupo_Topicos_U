@@ -7,5 +7,33 @@ namespace Bingo_System
 {
     public class clsCelda
     {
+        private bool aJugar;
+        private int numero;
+
+        public bool AJugar
+        {
+            get
+            {
+                return aJugar;
+            }
+
+            set
+            {
+                aJugar = value;
+            }
+        }
+
+        public int Numero
+        {
+            get
+            {
+                return numero;
+            }
+
+            set
+            {
+                numero = value;
+            }
+        }
     }
 }
