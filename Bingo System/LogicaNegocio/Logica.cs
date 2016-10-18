@@ -30,5 +30,9 @@ namespace Bingo_System.LogicaNegocio
         }
 
         #endregion
+
+        #region Metodos 
+
+        #endregion
     }
 }
