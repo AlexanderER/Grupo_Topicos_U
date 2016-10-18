@@ -3,7 +3,7 @@
   <Class Name="Bingo_System.clsGlobal" Collapsed="true">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAgAAAEACIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>clsGlobal.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -24,7 +24,7 @@
   <Class Name="Bingo_System.Properties.Resources" Collapsed="true">
     <Position X="4" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAABAAAAAAAAAgAABEQAAAwAAAAAAAAEAAAAAAIA=</HashCode>
+      <HashCode>AAAgAABAAAAAAAAAgAABEQAAAwEAAAAAAAEAACAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Bingo_System.Properties.Settings" Collapsed="true">
@@ -36,19 +36,19 @@
   <Class Name="Bingo_System.Ventanas.frmInicioBingo" Collapsed="true">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAIIAAKAAABQABACAgAACAAACAAAAAIAAAgJAAAA=</HashCode>
+      <HashCode>AACAAIIAAKAAABRABACAgAACCAACAAhAAKAAAgJAAAA=</HashCode>
       <FileName>Ventanas\001frmInicioBingo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bingo_System.clsCelda">
-    <Position X="5" Y="3" Width="1.5" />
+    <Position X="5.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>clsCelda.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bingo_System.clsCarton">
-    <Position X="2.5" Y="3" Width="1.5" />
+    <Position X="3" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>clsCarton.cs</FileName>
