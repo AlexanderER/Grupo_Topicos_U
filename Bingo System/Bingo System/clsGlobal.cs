@@ -24,15 +24,11 @@ namespace Bingo_System
         public static List<Int32> ListaNumerosFavorecidos;
 
 
-        public static List<Clases.clsJugador> ListaJugadores = new List<Clases.clsJugador>();
+        //public static List<Clases.clsJugador> ListaJugadores = new List<Clases.clsJugador>();
 
 
         #endregion
 
-        //Recorre lista de cartones y busca ID carton
-        public List<clsCarton> buscarJugador(int idJugador)
-        {
-            throw new System.NotImplementedException();
-        }
+       
     }
 }

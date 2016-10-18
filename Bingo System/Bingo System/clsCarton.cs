@@ -19,7 +19,7 @@ namespace Bingo_System
         public clsCarton(int cantidadNumerosAJugar)
         {
             List<List<clsCelda>> columnas = new List<List<clsCelda>>();
-            this.CantidadNumerosAJugar = cantidadNumerosAJugar;
+            this.CantidadNumerosAJugar = clsGlobal.iLimiteNumerosBingo;
             llenarCarton();
         }
 
@@ -40,13 +40,22 @@ namespace Bingo_System
                     
                     do
                     {
-                        nuevoNumero = rnd.Next(suelo, techo);
-                        
+                        nuevoNumero = rnd.Next(suelo, techo);                        
                     }
                     while (numerosYaSorteados.Contains(nuevoNumero));
                     numerosYaSorteados.Add(nuevoNumero);
 
                     celda.Numero = nuevoNumero;
+
+                    //Aqui tener carton modelo
+                    if (clsCartonModelo.Columnas[x][p])
+                    {
+                        celda.AJugar = true;
+                    }
+                    else
+                    {
+                        celda.AJugar = false;
+                    }
                     columnas[x].Add(celda);
 
                 }

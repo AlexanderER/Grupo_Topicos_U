@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Clases\clsJugador.cs" />
     <Compile Include="clsCarton.cs" />
+    <Compile Include="clsCartonModelo.cs" />
     <Compile Include="clsCelda.cs" />
     <Compile Include="clsGlobal.cs" />
     <Compile Include="clsJugador.cs" />
