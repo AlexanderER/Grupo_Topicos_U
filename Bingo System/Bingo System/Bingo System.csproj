@@ -49,11 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\clsJugador.cs" />
-    <Compile Include="clsCarton.cs" />
-    <Compile Include="clsCartonModelo.cs" />
-    <Compile Include="clsCelda.cs" />
+    <Compile Include="Clases\clsCarton.cs" />
+    <Compile Include="Clases\clsCartonModelo.cs" />
+    <Compile Include="Clases\clsCelda.cs" />
     <Compile Include="clsGlobal.cs" />
-    <Compile Include="clsJugador.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
