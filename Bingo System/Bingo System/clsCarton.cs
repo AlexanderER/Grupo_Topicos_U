@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Bingo_System
 {
-    public class clsCarton
+    public class clsCarton : clsCartonModelo
     {
         private int cantidadNumerosAJugar;
         private int numeroAReducirParaGanar;
-        private List<List<clsCelda>> columnas;
+       
 
         public clsCarton()
         {
@@ -29,7 +29,7 @@ namespace Bingo_System
             int segmentos = CantidadNumerosAJugar / 5;
             for (int x = 1; x <=5; x++)
             {
-                columnas.Add(new List<clsCelda>());
+                Columnas.Add(new List<clsCelda>());
                 for (int p = 1; p <= 5; p++)
                 {
                     int suelo = segmentos * (p - 1);
@@ -47,16 +47,8 @@ namespace Bingo_System
 
                     celda.Numero = nuevoNumero;
 
-                    //Aqui tener carton modelo
-                    if (clsCartonModelo.Columnas[x][p])
-                    {
-                        celda.AJugar = true;
-                    }
-                    else
-                    {
-                        celda.AJugar = false;
-                    }
-                    columnas[x].Add(celda);
+                   
+                    Columnas[x].Add(celda);
 
                 }
             }
