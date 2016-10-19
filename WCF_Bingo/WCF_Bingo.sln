@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF_Bingo", "WCF_Bingo\WCF_Bingo.csproj", "{DAFB8A8C-0649-4F59-B635-F10994DEE255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Bingo", "UI_Bingo\UI_Bingo.csproj", "{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAFB8A8C-0649-4F59-B635-F10994DEE255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAFB8A8C-0649-4F59-B635-F10994DEE255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAFB8A8C-0649-4F59-B635-F10994DEE255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAFB8A8C-0649-4F59-B635-F10994DEE255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
