@@ -24,7 +24,7 @@ namespace Bingo_System
         public static List<Int32> ListaNumerosFavorecidos;
 
 
-        //public static List<Clases.clsJugador> ListaJugadores = new List<Clases.clsJugador>();
+        public static List<Clases.clsJugador> ListaJugadores = new List<Clases.clsJugador>();
 
 
         #endregion
