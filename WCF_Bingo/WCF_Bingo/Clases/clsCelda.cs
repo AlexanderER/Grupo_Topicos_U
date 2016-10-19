@@ -8,8 +8,18 @@ namespace WCF_Bingo.Clases
 {
     class clsCelda
     {
+        //----------------------------------------------------------------------------------
+
+        #region Variables
+
         private bool aJugar;
         private int numero;
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Sets y Gets
 
         public bool AJugar
         {
@@ -37,5 +47,8 @@ namespace WCF_Bingo.Clases
             }
         }
 
+        #endregion
+
+        //----------------------------------------------------------------------------------
     }
 }

@@ -8,23 +8,38 @@ namespace WCF_Bingo.Clases
 {
     class clsCarton : clsCartonModelo
     {
+        //----------------------------------------------------------------------------------
+
+        #region Variables
+
         private int cantidadNumerosAJugar;
         private int numeroAReducirParaGanar;
 
+        #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Constructor
 
         public clsCarton()
         {
-            List<List<clsCelda>> columnas = new List<List<clsCelda>>();
-            llenarCarton();
-        }
-        public clsCarton(int cantidadNumerosAJugar)
-        {
-            List<List<clsCelda>> columnas = new List<List<clsCelda>>();
-            //this.CantidadNumerosAJugar = clsGlobal.iLimiteNumerosBingo;
-            llenarCarton();
+            List<List<clsCelda>> columnas = new List<List<clsCelda>>();            
         }
 
-        public void llenarCarton()
+        public clsCarton(int cantidadNumerosAJugar, clsCartonModelo cartonModalidad)
+        {
+            List<List<clsCelda>> columnas = new List<List<clsCelda>>();
+            this.CantidadNumerosAJugar = cantidadNumerosAJugar;
+            llenarCarton(cartonModalidad);
+        }
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Metodos
+
+        public void llenarCarton(clsCartonModelo cartonModalidad)
         {
             List<int> numerosYaSorteados = new List<int>();
             int segmentos = CantidadNumerosAJugar / 5;
@@ -48,12 +63,20 @@ namespace WCF_Bingo.Clases
 
                     celda.Numero = nuevoNumero;
 
+                    //x-1 ya que el for empieza en 1 y la lista en 0
+                    celda.AJugar = cartonModalidad.Columnas[x-1][p-1].AJugar;
 
                     Columnas[x].Add(celda);
 
                 }
             }
         }
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Sets y Gets
 
         public int CantidadNumerosAJugar
         {
@@ -80,5 +103,7 @@ namespace WCF_Bingo.Clases
                 numeroAReducirParaGanar = value;
             }
         }
+
+        #endregion
     }
 }

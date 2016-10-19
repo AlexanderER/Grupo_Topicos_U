@@ -8,8 +8,17 @@ namespace WCF_Bingo.Clases
 {
     class clsCartonModelo
     {
+        //----------------------------------------------------------------------------------
+
+        #region Variables
         private string nombre;
         private List<List<clsCelda>> columnas;
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Constructor
 
         public clsCartonModelo()
         {
@@ -20,15 +29,17 @@ namespace WCF_Bingo.Clases
                 for (int p = 1; p <= 5; p++)
                 {
                     clsCelda celda = new clsCelda();
-
-                    //celda.AJugar = mdModalidadJuego.esquema[x][p];
-
                     Columnas[x].Add(celda);
-
                 }
             }
 
         }
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Sets y Gets
 
         public List<List<clsCelda>> Columnas
         {
@@ -42,5 +53,20 @@ namespace WCF_Bingo.Clases
                 columnas = value;
             }
         }
+
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        #endregion
     }
 }
