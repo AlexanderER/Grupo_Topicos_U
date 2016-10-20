@@ -17,6 +17,10 @@ namespace WCF_Bingo
         [OperationContract]
         clsJugador getJugador(String p_sNombreUsuario, Int32 p_iCantidadCartones, List<clsCarton> p_ListaCartones);
 
+        
+        [OperationContract]
+        Int32 GenerarNumero(Int32 p_iNumeroTecho, List<Int32> p_lista);
+
 
         #endregion
     }

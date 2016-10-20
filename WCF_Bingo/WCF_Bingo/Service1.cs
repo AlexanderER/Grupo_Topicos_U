@@ -24,6 +24,52 @@ namespace WCF_Bingo
             return miJugador;
         }
 
+
+        public Int32 GenerarNumero(Int32 p_iNumeroTecho, List<Int32> p_lista)
+        {
+            Int32 iNumeroAleatorio = 0;
+            Boolean bExiste = true;
+            Random aleatorio = new Random();
+
+            // Se comprueba si el número ya salió, 
+            // es decir si esta contenido en la lista
+            // Sino vuelvo a generar otro numero
+
+            do
+            {
+                iNumeroAleatorio = aleatorio.Next(1, p_iNumeroTecho);
+
+                if (p_lista != null) {
+
+                    if (p_lista.Count >= 1) {
+
+                        if (p_lista.Contains(iNumeroAleatorio)){
+
+                            bExiste = true;
+
+                        }else{
+
+                            bExiste = false;
+                        }
+
+                    } else{
+
+                        bExiste = false;
+                    }
+
+                } else{
+
+                    bExiste = false;
+
+                }
+
+            } while (bExiste == true);
+
+
+            //p_lista.Add(iNumero);
+            return iNumeroAleatorio;
+        }
+
         #endregion
 
     }
