@@ -209,7 +209,7 @@ namespace WCF_Bingo.Clases
                     //N
                     cartonModalidad.Columnas[2][0].AJugar = false;
                     cartonModalidad.Columnas[2][1].AJugar = false;
-                    cartonModalidad.Columnas[2][2].AJugar = true;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
                     cartonModalidad.Columnas[2][3].AJugar = false;
                     cartonModalidad.Columnas[2][4].AJugar = false;
                     //G
@@ -243,7 +243,7 @@ namespace WCF_Bingo.Clases
                     //N
                     cartonModalidad.Columnas[2][0].AJugar = false;
                     cartonModalidad.Columnas[2][1].AJugar = false;
-                    cartonModalidad.Columnas[2][2].AJugar = true;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
                     cartonModalidad.Columnas[2][3].AJugar = false;
                     cartonModalidad.Columnas[2][4].AJugar = false;
                     //G
