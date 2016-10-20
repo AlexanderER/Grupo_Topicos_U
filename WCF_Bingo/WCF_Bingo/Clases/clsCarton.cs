@@ -14,6 +14,7 @@ namespace WCF_Bingo.Clases
 
         private int cantidadNumerosAJugar;
         private int numeroAReducirParaGanar;
+        private List<List<clsCelda>> columnas;
 
         #endregion
 
@@ -21,19 +22,15 @@ namespace WCF_Bingo.Clases
 
         #region Constructor
 
-        public clsCarton()
-        {
-            List<List<clsCelda>> columnas = new List<List<clsCelda>>();            
-        }
+        public clsCarton() { }
 
         public clsCarton(int cantidadNumerosAJugar, int modalidad)
         {
-            List<List<clsCelda>> columnas = new List<List<clsCelda>>();
+            columnas = new List<List<clsCelda>>();
             this.CantidadNumerosAJugar = cantidadNumerosAJugar;
             llenarCarton(elegirModalidad(modalidad));
+            numeroAReducirParaGanar = definirNumeroAReducir();
         }
-
-      
 
         #endregion
 
@@ -74,6 +71,22 @@ namespace WCF_Bingo.Clases
             }
         }
 
+        private int definirNumeroAReducir()
+        {
+            int count = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int p = 0; p < 5; p++)
+                {
+                    if (Columnas[i][p].AJugar)
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
         #endregion
 
         //----------------------------------------------------------------------------------
@@ -103,6 +116,19 @@ namespace WCF_Bingo.Clases
             set
             {
                 numeroAReducirParaGanar = value;
+            }
+        }
+
+        public List<List<clsCelda>> Columnas
+        {
+            get
+            {
+                return columnas;
+            }
+
+            set
+            {
+                columnas = value;
             }
         }
 
