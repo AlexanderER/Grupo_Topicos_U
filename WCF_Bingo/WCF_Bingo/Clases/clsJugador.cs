@@ -11,9 +11,8 @@ namespace WCF_Bingo.Clases
 
         #region Variables
 
-        public String sNombreUsuario { get; set; }
-        public Int32 iCantidadCartones { get; set; }
-        public List<clsCarton> listaCartones { get; set; }
+        private string nombreJugador;
+        private List<clsCarton> listaCartones;
 
         #endregion
 
@@ -21,44 +20,31 @@ namespace WCF_Bingo.Clases
 
         #region Sets y Gets
 
-        //public string SNombreUsuario
-        //{
-        //    get
-        //    {
-        //        return sNombreUsuario;
-        //    }
+        public string NombreJugador
+        {
+            get
+            {
+                return nombreJugador;
+            }
 
-        //    set
-        //    {
-        //        sNombreUsuario = value;
-        //    }
-        //}
+            set
+            {
+                nombreJugador = value;
+            }
+        }
 
-        //public int ICantidadCartones
-        //{
-        //    get
-        //    {
-        //        return iCantidadCartones;
-        //    }
+        public List<clsCarton> ListaCartones
+        {
+            get
+            {
+                return listaCartones;
+            }
 
-        //    set
-        //    {
-        //        iCantidadCartones = value;
-        //    }
-        //}
-
-        //public List<clsCarton> ListaCartones
-        //{
-        //    get
-        //    {
-        //        return listaCartones;
-        //    }
-
-        //    set
-        //    {
-        //        listaCartones = value;
-        //    }
-        //}
+            set
+            {
+                listaCartones = value;
+            }
+        }
 
         #endregion
 
@@ -66,16 +52,37 @@ namespace WCF_Bingo.Clases
 
         #region Constructor
 
-        //public clsJugador(String p_sNombreUsuario, Int32 p_iCantidadCartones, List<clsCarton> p_ListaCartones)
-        //{
-        //    sNombreUsuario = p_sNombreUsuario;
-        //    iCantidadCartones = p_iCantidadCartones;
-        //    listaCartones = p_ListaCartones;
-        //}
+        public clsJugador() {
+
+        }
+
+        public clsJugador(string nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
+        {
+            this.NombreJugador = nombreJugador;
+            agregarCartones(cantidadCartones,cantidadNumerosAJugar,modalidad);
+        }
 
         #endregion
 
         //----------------------------------------------------------------------------------
+
+        #region Metodos
+
+        public void agregarCartones(int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
+        {
+            for (int i = 0; i < cantidadCartones; i++)
+            {
+                agregarCarton(cantidadCartones, modalidad);   
+            }
+        }
+
+        public void agregarCarton(int cantidadNumerosAJugar, int modalidad)
+        {
+            clsCarton carton = new clsCarton();
+            this.ListaCartones.Add(carton);
+        }
+
+        #endregion
 
     }
 }
