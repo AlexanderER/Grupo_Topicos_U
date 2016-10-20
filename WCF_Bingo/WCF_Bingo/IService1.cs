@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WCF_Bingo.Clases;
 
 namespace WCF_Bingo
 {
@@ -11,10 +12,12 @@ namespace WCF_Bingo
     [ServiceContract]
     public interface IService1
     {
-        //*****************************************************
-        //*****************************************************
-        // TODO: agregue aquí sus operaciones de servicio   ***
-        //*****************************************************
-        //*****************************************************
+        #region Jugador
+
+        [OperationContract]
+        clsJugador getJugador(String p_sNombreUsuario, Int32 p_iCantidadCartones, List<clsCarton> p_ListaCartones);
+
+
+        #endregion
     }
 }
