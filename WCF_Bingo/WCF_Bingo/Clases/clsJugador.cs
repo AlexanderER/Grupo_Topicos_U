@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace WCF_Bingo.Clases
 {
-    class clsJugador
+    public class clsJugador
     { //----------------------------------------------------------------------------------
 
         #region Variables
 
-        private String sNombreUsuario;
-        private Int32 iCantidadCartones;
-        private List<clsCarton> listaCartones;
+        public String sNombreUsuario { get; set; }
+        public Int32 iCantidadCartones { get; set; }
+        public List<clsCarton> listaCartones { get; set; }
 
         #endregion
 
@@ -21,44 +21,44 @@ namespace WCF_Bingo.Clases
 
         #region Sets y Gets
 
-        public string SNombreUsuario
-        {
-            get
-            {
-                return sNombreUsuario;
-            }
+        //public string SNombreUsuario
+        //{
+        //    get
+        //    {
+        //        return sNombreUsuario;
+        //    }
 
-            set
-            {
-                sNombreUsuario = value;
-            }
-        }
+        //    set
+        //    {
+        //        sNombreUsuario = value;
+        //    }
+        //}
 
-        public int ICantidadCartones
-        {
-            get
-            {
-                return iCantidadCartones;
-            }
+        //public int ICantidadCartones
+        //{
+        //    get
+        //    {
+        //        return iCantidadCartones;
+        //    }
 
-            set
-            {
-                iCantidadCartones = value;
-            }
-        }
+        //    set
+        //    {
+        //        iCantidadCartones = value;
+        //    }
+        //}
 
-        public List<clsCarton> ListaCartones
-        {
-            get
-            {
-                return listaCartones;
-            }
+        //public List<clsCarton> ListaCartones
+        //{
+        //    get
+        //    {
+        //        return listaCartones;
+        //    }
 
-            set
-            {
-                listaCartones = value;
-            }
-        }
+        //    set
+        //    {
+        //        listaCartones = value;
+        //    }
+        //}
 
         #endregion
 
@@ -66,12 +66,12 @@ namespace WCF_Bingo.Clases
 
         #region Constructor
 
-        public clsJugador(String p_sNombreUsuario, Int32 p_iCantidadCartones, List<clsCarton> p_ListaCartones)
-        {
-            sNombreUsuario = p_sNombreUsuario;
-            iCantidadCartones = p_iCantidadCartones;
-            listaCartones = p_ListaCartones;
-        }
+        //public clsJugador(String p_sNombreUsuario, Int32 p_iCantidadCartones, List<clsCarton> p_ListaCartones)
+        //{
+        //    sNombreUsuario = p_sNombreUsuario;
+        //    iCantidadCartones = p_iCantidadCartones;
+        //    listaCartones = p_ListaCartones;
+        //}
 
         #endregion
 

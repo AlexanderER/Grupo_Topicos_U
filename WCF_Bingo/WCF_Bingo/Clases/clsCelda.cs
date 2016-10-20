@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WCF_Bingo.Clases
 {
-    class clsCelda
+    public class clsCelda
     {
         //----------------------------------------------------------------------------------
 
