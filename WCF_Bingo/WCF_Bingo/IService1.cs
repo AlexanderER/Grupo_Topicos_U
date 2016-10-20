@@ -21,6 +21,8 @@ namespace WCF_Bingo
         [OperationContract]
         Int32 GenerarNumero(Int32 p_iNumeroTecho, List<Int32> p_lista);
 
+        [OperationContract]
+        Boolean YaExisteElJugador(String p_sNombreJugador, List<clsJugador> p_ListaJugadores);
 
         #endregion
     }

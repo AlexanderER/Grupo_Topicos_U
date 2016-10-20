@@ -70,6 +70,29 @@ namespace WCF_Bingo
             return iNumeroAleatorio;
         }
 
+        public bool YaExisteElJugador(string p_sNombreJugador, List<clsJugador> p_ListaJugadores)
+        {
+            Boolean bExiste = false;
+
+            if (p_ListaJugadores != null)   // Si es diferente de nulo
+            {
+                if (p_ListaJugadores.Count >= 1)    // Si tiene elementos
+                {
+                    foreach (clsJugador clsJugTemp in p_ListaJugadores)  // Obtengo cada elemento de la Lista de Jugadores
+                    {
+                        String sTempNombreJugador = clsJugTemp.sNombreUsuario;  // Obtengo el nombre del Jugador
+
+                        if (sTempNombreJugador == p_sNombreJugador) // Valido que no sean iguales
+                        {
+                            bExiste = true;
+                        }
+                    }
+                }
+            }
+
+            return bExiste;
+        }
+
         #endregion
 
     }
