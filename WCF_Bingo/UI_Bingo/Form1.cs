@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace UI_Bingo
 {
-    public partial class Form2 : Form
+    public partial class Form1 : Form
     {
-        public Form2()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

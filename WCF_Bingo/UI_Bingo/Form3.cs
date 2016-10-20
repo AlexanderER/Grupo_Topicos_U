@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UI_Bingo
 {
-    public partial class MenuPrincipal : Form
+    public partial class Form3 : Form
     {
-        public MenuPrincipal()
+        public Form3()
         {
             InitializeComponent();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

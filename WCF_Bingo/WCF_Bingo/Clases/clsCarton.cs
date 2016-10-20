@@ -26,12 +26,14 @@ namespace WCF_Bingo.Clases
             List<List<clsCelda>> columnas = new List<List<clsCelda>>();            
         }
 
-        public clsCarton(int cantidadNumerosAJugar, clsCartonModelo cartonModalidad)
+        public clsCarton(int cantidadNumerosAJugar, int modalidad)
         {
             List<List<clsCelda>> columnas = new List<List<clsCelda>>();
             this.CantidadNumerosAJugar = cantidadNumerosAJugar;
-            llenarCarton(cartonModalidad);
+            llenarCarton(elegirModalidad(modalidad));
         }
+
+      
 
         #endregion
 
@@ -105,5 +107,378 @@ namespace WCF_Bingo.Clases
         }
 
         #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Modalidades
+        private clsCartonModelo elegirModalidad(int modalidad)
+        {
+            clsCartonModelo cartonModalidad = new clsCartonModelo();
+
+            switch (modalidad)
+            {
+                case 0:
+                    throw new System.ArgumentException("Modalidad no puede ser 0", "original");
+                //break;
+
+                // CARTON_LLENO
+                case 1:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        for (int p = 0; p < 5; p++)
+                        {
+                            cartonModalidad.Columnas[i][p].AJugar = true;
+                        }
+                    }
+                    break;
+
+                //    CUATRO_ESQUINAS = 2,
+                case 2:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = false;
+                    cartonModalidad.Columnas[0][2].AJugar = false;
+                    cartonModalidad.Columnas[0][3].AJugar = false;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = false;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = false;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = false;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = false;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = false;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = false;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = false;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = false;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = false;
+                    cartonModalidad.Columnas[4][2].AJugar = false;
+                    cartonModalidad.Columnas[4][3].AJugar = false;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                //    LETRA_H         = 3,
+                case 3:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = false;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = true;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = false;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = false;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = true;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = false;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = false;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = true;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = false;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = true;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = true;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                //    LETRA_X         = 4,
+                case 4:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = false;
+                    cartonModalidad.Columnas[0][2].AJugar = false;
+                    cartonModalidad.Columnas[0][3].AJugar = false;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = false;
+                    cartonModalidad.Columnas[1][1].AJugar = true;
+                    cartonModalidad.Columnas[1][2].AJugar = false;
+                    cartonModalidad.Columnas[1][3].AJugar = true;
+                    cartonModalidad.Columnas[1][4].AJugar = false;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = false;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = true;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = false;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = false;
+                    cartonModalidad.Columnas[3][1].AJugar = true;
+                    cartonModalidad.Columnas[3][2].AJugar = false;
+                    cartonModalidad.Columnas[3][3].AJugar = true;
+                    cartonModalidad.Columnas[3][4].AJugar = false;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = false;
+                    cartonModalidad.Columnas[4][2].AJugar = false;
+                    cartonModalidad.Columnas[4][3].AJugar = false;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                //    LETRA_O         = 5,
+                case 5:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = true;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = false;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = true;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = true;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = true;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = true;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = false;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = true;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = true;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = true;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                //    LETRA_U         = 6,
+                case 6:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = false;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = false;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = true;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = false;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = true;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = false;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = false;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = true;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = true;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = true;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                //    LETRA_P         = 7,
+                case 7:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = true;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = true;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = false;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = true;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = false;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = true;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = true;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = true;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = true;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = false;
+                    cartonModalidad.Columnas[4][4].AJugar = false;
+                    break;
+
+                //    LETRA_A         = 8,
+                case 8:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = true;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = true;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = false;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = true;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = false;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = true;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = true;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = false;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = true;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = true;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                //    LETRA_E         = 9
+                case 9:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = true;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = true;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = true;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = true;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = true;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = true;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = true;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = true;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = false;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = false;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                //    LETRA_W         = 10
+                case 10:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = false;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = false;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = true;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = true;
+                    cartonModalidad.Columnas[2][1].AJugar = true;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = true;
+                    cartonModalidad.Columnas[2][4].AJugar = true;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = false;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = false;
+                    cartonModalidad.Columnas[3][3].AJugar = false;
+                    cartonModalidad.Columnas[3][4].AJugar = true;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = true;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = true;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+                //    LETRA_R         = 11
+                case 11:
+                    //B
+                    cartonModalidad.Columnas[0][0].AJugar = true;
+                    cartonModalidad.Columnas[0][1].AJugar = true;
+                    cartonModalidad.Columnas[0][2].AJugar = true;
+                    cartonModalidad.Columnas[0][3].AJugar = true;
+                    cartonModalidad.Columnas[0][4].AJugar = true;
+                    //I
+                    cartonModalidad.Columnas[1][0].AJugar = true;
+                    cartonModalidad.Columnas[1][1].AJugar = false;
+                    cartonModalidad.Columnas[1][2].AJugar = true;
+                    cartonModalidad.Columnas[1][3].AJugar = false;
+                    cartonModalidad.Columnas[1][4].AJugar = false;
+                    //N
+                    cartonModalidad.Columnas[2][0].AJugar = true;
+                    cartonModalidad.Columnas[2][1].AJugar = false;
+                    cartonModalidad.Columnas[2][2].AJugar = false;
+                    cartonModalidad.Columnas[2][3].AJugar = false;
+                    cartonModalidad.Columnas[2][4].AJugar = false;
+                    //G
+                    cartonModalidad.Columnas[3][0].AJugar = true;
+                    cartonModalidad.Columnas[3][1].AJugar = false;
+                    cartonModalidad.Columnas[3][2].AJugar = true;
+                    cartonModalidad.Columnas[3][3].AJugar = true;
+                    cartonModalidad.Columnas[3][4].AJugar = false;
+                    //O
+                    cartonModalidad.Columnas[4][0].AJugar = true;
+                    cartonModalidad.Columnas[4][1].AJugar = true;
+                    cartonModalidad.Columnas[4][2].AJugar = true;
+                    cartonModalidad.Columnas[4][3].AJugar = false;
+                    cartonModalidad.Columnas[4][4].AJugar = true;
+                    break;
+
+                default:
+                    Console.WriteLine("No se eligio modalidad");
+                    break;
+            }
+
+            return cartonModalidad;
+        }
+        #endregion
+
     }
 }
