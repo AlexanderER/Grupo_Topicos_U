@@ -81,7 +81,16 @@ namespace UI_Bingo
             }
             if (cmbNumeroJugadores.Items.Count == 0) {
                 cmbNumeroJugadores.Enabled = false; }
-            }
+
+
+
+
+            //-------------------------------------------------------------------------------------------------
+            // Defino los parametros del Juego
+            clsGlobal.iLimiteNumerosBingo = Convert.ToInt32(txtNumMax.Text);    // Cantidad Maxima de Numeros
+            clsGlobal.iModalidadJuego = cmbTiposJuego.SelectedIndex + 1;
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -92,7 +101,7 @@ namespace UI_Bingo
 
         private void txtNumMax_Leave(object sender, EventArgs e)
         {
-            clsGlobal.iLimiteNumerosBingo = Convert.ToInt32(txtNumMax.Text);
+            //clsGlobal.iLimiteNumerosBingo = Convert.ToInt32(txtNumMax.Text);
 
 
             if (int.Parse(txtNumMax.Text) < 25) { MessageBox.Show("Digite unicamente números mayores a 24", "Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1); }
