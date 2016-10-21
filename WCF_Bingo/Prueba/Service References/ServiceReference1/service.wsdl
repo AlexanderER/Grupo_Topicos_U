@@ -4,64 +4,25 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_getJugador_InputMessage">
-    <wsdl:part name="parameters" element="tns:getJugador" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getJugador_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getJugadorResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_GenerarNumero_InputMessage">
     <wsdl:part name="parameters" element="tns:GenerarNumero" />
   </wsdl:message>
   <wsdl:message name="IService1_GenerarNumero_OutputMessage">
     <wsdl:part name="parameters" element="tns:GenerarNumeroResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_YaExisteElJugador_InputMessage">
-    <wsdl:part name="parameters" element="tns:YaExisteElJugador" />
-  </wsdl:message>
-  <wsdl:message name="IService1_YaExisteElJugador_OutputMessage">
-    <wsdl:part name="parameters" element="tns:YaExisteElJugadorResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="getJugador">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getJugador" message="tns:IService1_getJugador_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getJugadorResponse" message="tns:IService1_getJugador_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GenerarNumero">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GenerarNumero" message="tns:IService1_GenerarNumero_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GenerarNumeroResponse" message="tns:IService1_GenerarNumero_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="YaExisteElJugador">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/YaExisteElJugador" message="tns:IService1_YaExisteElJugador_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/YaExisteElJugadorResponse" message="tns:IService1_YaExisteElJugador_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="getJugador">
-      <soap:operation soapAction="http://tempuri.org/IService1/getJugador" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GenerarNumero">
       <soap:operation soapAction="http://tempuri.org/IService1/GenerarNumero" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="YaExisteElJugador">
-      <soap:operation soapAction="http://tempuri.org/IService1/YaExisteElJugador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -9,270 +9,17 @@
 //------------------------------------------------------------------------------
 
 namespace Prueba.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clsCarton", Namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases")]
-    [System.SerializableAttribute()]
-    public partial class clsCarton : Prueba.ServiceReference1.clsCartonModelo {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CantidadNumerosAJugarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NumeroAReducirParaGanarField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CantidadNumerosAJugar {
-            get {
-                return this.CantidadNumerosAJugarField;
-            }
-            set {
-                if ((this.CantidadNumerosAJugarField.Equals(value) != true)) {
-                    this.CantidadNumerosAJugarField = value;
-                    this.RaisePropertyChanged("CantidadNumerosAJugar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NumeroAReducirParaGanar {
-            get {
-                return this.NumeroAReducirParaGanarField;
-            }
-            set {
-                if ((this.NumeroAReducirParaGanarField.Equals(value) != true)) {
-                    this.NumeroAReducirParaGanarField = value;
-                    this.RaisePropertyChanged("NumeroAReducirParaGanar");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clsCartonModelo", Namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Prueba.ServiceReference1.clsCarton))]
-    public partial class clsCartonModelo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Prueba.ServiceReference1.clsCelda[][] ColumnasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Prueba.ServiceReference1.clsCelda[][] Columnas {
-            get {
-                return this.ColumnasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ColumnasField, value) != true)) {
-                    this.ColumnasField = value;
-                    this.RaisePropertyChanged("Columnas");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nombre {
-            get {
-                return this.NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clsCelda", Namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases")]
-    [System.SerializableAttribute()]
-    public partial class clsCelda : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AJugarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NumeroField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool AJugar {
-            get {
-                return this.AJugarField;
-            }
-            set {
-                if ((this.AJugarField.Equals(value) != true)) {
-                    this.AJugarField = value;
-                    this.RaisePropertyChanged("AJugar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Numero {
-            get {
-                return this.NumeroField;
-            }
-            set {
-                if ((this.NumeroField.Equals(value) != true)) {
-                    this.NumeroField = value;
-                    this.RaisePropertyChanged("Numero");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clsJugador", Namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases")]
-    [System.SerializableAttribute()]
-    public partial class clsJugador : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int iCantidadCartonesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Prueba.ServiceReference1.clsCarton[] listaCartonesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sNombreUsuarioField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int iCantidadCartones {
-            get {
-                return this.iCantidadCartonesField;
-            }
-            set {
-                if ((this.iCantidadCartonesField.Equals(value) != true)) {
-                    this.iCantidadCartonesField = value;
-                    this.RaisePropertyChanged("iCantidadCartones");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Prueba.ServiceReference1.clsCarton[] listaCartones {
-            get {
-                return this.listaCartonesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.listaCartonesField, value) != true)) {
-                    this.listaCartonesField = value;
-                    this.RaisePropertyChanged("listaCartones");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sNombreUsuario {
-            get {
-                return this.sNombreUsuarioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sNombreUsuarioField, value) != true)) {
-                    this.sNombreUsuarioField = value;
-                    this.RaisePropertyChanged("sNombreUsuario");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getJugador", ReplyAction="http://tempuri.org/IService1/getJugadorResponse")]
-        Prueba.ServiceReference1.clsJugador getJugador(string p_sNombreUsuario, int p_iCantidadCartones, Prueba.ServiceReference1.clsCarton[] p_ListaCartones);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getJugador", ReplyAction="http://tempuri.org/IService1/getJugadorResponse")]
-        System.Threading.Tasks.Task<Prueba.ServiceReference1.clsJugador> getJugadorAsync(string p_sNombreUsuario, int p_iCantidadCartones, Prueba.ServiceReference1.clsCarton[] p_ListaCartones);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerarNumero", ReplyAction="http://tempuri.org/IService1/GenerarNumeroResponse")]
         int GenerarNumero(int p_iNumeroTecho, int[] p_lista);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerarNumero", ReplyAction="http://tempuri.org/IService1/GenerarNumeroResponse")]
         System.Threading.Tasks.Task<int> GenerarNumeroAsync(int p_iNumeroTecho, int[] p_lista);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/YaExisteElJugador", ReplyAction="http://tempuri.org/IService1/YaExisteElJugadorResponse")]
-        bool YaExisteElJugador(string p_sNombreJugador, Prueba.ServiceReference1.clsJugador[] p_ListaJugadores);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/YaExisteElJugador", ReplyAction="http://tempuri.org/IService1/YaExisteElJugadorResponse")]
-        System.Threading.Tasks.Task<bool> YaExisteElJugadorAsync(string p_sNombreJugador, Prueba.ServiceReference1.clsJugador[] p_ListaJugadores);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -302,28 +49,12 @@ namespace Prueba.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public Prueba.ServiceReference1.clsJugador getJugador(string p_sNombreUsuario, int p_iCantidadCartones, Prueba.ServiceReference1.clsCarton[] p_ListaCartones) {
-            return base.Channel.getJugador(p_sNombreUsuario, p_iCantidadCartones, p_ListaCartones);
-        }
-        
-        public System.Threading.Tasks.Task<Prueba.ServiceReference1.clsJugador> getJugadorAsync(string p_sNombreUsuario, int p_iCantidadCartones, Prueba.ServiceReference1.clsCarton[] p_ListaCartones) {
-            return base.Channel.getJugadorAsync(p_sNombreUsuario, p_iCantidadCartones, p_ListaCartones);
-        }
-        
         public int GenerarNumero(int p_iNumeroTecho, int[] p_lista) {
             return base.Channel.GenerarNumero(p_iNumeroTecho, p_lista);
         }
         
         public System.Threading.Tasks.Task<int> GenerarNumeroAsync(int p_iNumeroTecho, int[] p_lista) {
             return base.Channel.GenerarNumeroAsync(p_iNumeroTecho, p_lista);
-        }
-        
-        public bool YaExisteElJugador(string p_sNombreJugador, Prueba.ServiceReference1.clsJugador[] p_ListaJugadores) {
-            return base.Channel.YaExisteElJugador(p_sNombreJugador, p_ListaJugadores);
-        }
-        
-        public System.Threading.Tasks.Task<bool> YaExisteElJugadorAsync(string p_sNombreJugador, Prueba.ServiceReference1.clsJugador[] p_ListaJugadores) {
-            return base.Channel.YaExisteElJugadorAsync(p_sNombreJugador, p_ListaJugadores);
         }
     }
 }
