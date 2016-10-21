@@ -7,12 +7,30 @@ using System.Threading.Tasks;
 namespace WCF_Bingo.Clases
 {
     public class clsJugador
-    { //----------------------------------------------------------------------------------
+    {
+        //----------------------------------------------------------------------------------
 
         #region Variables
 
         private int nombreJugador;
         private List<clsCarton> listaCartones;
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
+
+        #region Constructor
+
+        public clsJugador() {
+
+        }
+
+        public clsJugador(int nombreJugador, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
+        {
+            this.NombreJugador = nombreJugador;
+            listaCartones = new List<clsCarton>();
+            agregarCartones(cantidadCartones,cantidadNumerosAJugar,modalidad);
+        }
 
         #endregion
 
@@ -44,23 +62,6 @@ namespace WCF_Bingo.Clases
             {
                 listaCartones = value;
             }
-        }
-
-        #endregion
-
-        //----------------------------------------------------------------------------------
-
-        #region Constructor
-
-        public clsJugador() {
-
-        }
-
-        public clsJugador(int nombreJugador, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
-        {
-            this.NombreJugador = nombreJugador;
-            listaCartones = new List<clsCarton>();
-            agregarCartones(cantidadCartones,cantidadNumerosAJugar,modalidad);
         }
 
         #endregion

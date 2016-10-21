@@ -8,6 +8,8 @@ namespace UI_Bingo.Clases
 {
     class clsCelda
     {
+        //----------------------------------------------------------------------------------
+
         #region Variables
 
         private bool aJugar;
@@ -15,5 +17,57 @@ namespace UI_Bingo.Clases
 
         #endregion
 
+        //----------------------------------------------------------------------------------
+
+        #region Constructor
+
+        public clsCelda() { }
+
+        public clsCelda(bool aJugar)
+        {
+            this.AJugar = aJugar;
+        }
+
+        public clsCelda(int numero, bool aJugar)
+        {
+            this.numero = numero;
+            this.AJugar = aJugar;
+        }
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
+        
+        #region Sets y Gets
+
+        public bool AJugar
+        {
+            get
+            {
+                return aJugar;
+            }
+
+            set
+            {
+                aJugar = value;
+            }
+        }
+
+        public int Numero
+        {
+            get
+            {
+                return numero;
+            }
+
+            set
+            {
+                numero = value;
+            }
+        }
+
+        #endregion
+
+        //----------------------------------------------------------------------------------
     }
 }
