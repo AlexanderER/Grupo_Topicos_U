@@ -214,7 +214,7 @@ namespace WCF_Bingo
                     clsJugador jugador = new clsJugador();
                     jugador.ListaCartones = listaCartones;
                     jugador.NombreJugador = listaJugadores[i].NombreJugador;
-                    listaARetornar.Add(jugador);
+                    listaARetornar.Add(jugador); 
                 }                
                 
             }
