@@ -63,7 +63,7 @@ namespace WCF_Bingo.Clases
                     //x-1 ya que el for empieza en 1 y la lista en 0
                     aJugarEnCelda = cartonModalidad.Columnas[x-1][p-1].AJugar;
 
-                    Columnas[x].Add(new clsCelda(nuevoNumero,aJugarEnCelda));
+                    Columnas[x-1].Add((new clsCelda(nuevoNumero, aJugarEnCelda)));
 
                 }
             }

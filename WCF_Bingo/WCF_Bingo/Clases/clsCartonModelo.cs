@@ -28,8 +28,7 @@ namespace WCF_Bingo.Clases
                 columnas.Add(new List<clsCelda>());
                 for (int p = 1; p <= 5; p++)
                 {
-                    clsCelda celda = new clsCelda();
-                    columnas[x][p].Add(celda);
+                    columnas[x-1].Add(new clsCelda());
                 }
             }
 

@@ -13,10 +13,51 @@ namespace WCF_Bingo
     {
         public List<clsJugador> crearJugador(List<clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
         {
-            clsJugador jugador = new clsJugador(nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
+            clsJugador jugador = new clsJugador(nombreUsuario,cantidadCartones,cantidadNumerosAJugar,modalidad);
+
+            if (!(listaJugadores.Count == 0))
+            {
+
+                #region validar cartones repetidos
+
+                //Recorre Cada Jugador
+                for (int x = 0; x < listaJugadores.Count; x++)
+                {
+                    bool similar = true;
+                    //Recorre cada carton de jugador x
+                    for (int i = 0; i < listaJugadores[x].ListaCartones.Count; i++)
+                    {
+                        //Recorre nuevo jugador
+                        for (int z = 0; z < jugador.ListaCartones.Count; z++)
+                        {
+                            //recorre cada celda
+                            for (int p = 0; p < 5; p++)
+                            {
+                                for (int q = 0; q < 5; q++)
+                                {
+                                    //valida si encuentra una diferencia
+                                    if (!(listaJugadores[x].ListaCartones[i].Columnas[p][q].Numero == jugador.ListaCartones[z].Columnas[p][q].Numero))
+                                    {
+                                        similar = false;
+                                    }
+                                }
+                            }
+                            if (similar)
+                            {
+                                jugador = new clsJugador(nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
+                                x = 0;
+                            }
+                        }
+                    }
+                }
+                #endregion
+
+            }
+
             listaJugadores.Add(jugador);
             return listaJugadores;
         }
+
         #region Jugador
 
         //public clsJugador getJugador(string p_sNombreUsuario, int p_iCantidadCartones, List<clsCarton> p_ListaCartones)
