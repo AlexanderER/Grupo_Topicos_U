@@ -12,9 +12,27 @@ namespace UI_Bingo
 {
     public partial class Form2 : Form
     {
+
+
         public Form2()
         {
             InitializeComponent();
+            //Console.WriteLine("Hola");
+            //cmbTiposJuego.Items.Add("Cartón lleno");
+            //cmbTiposJuego.Items.Add("Cuatro esquinas");
+            //cmbTiposJuego.Items.Add("Letra H");
+            //cmbTiposJuego.Items.Add("Letra X");
+            //
+            //
+            //Letra O
+            //Letra U
+            //Letra P
+            //Letra A
+            //Letra E
+            //Letra W
+            //Letra R
+            //")
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -27,14 +45,35 @@ namespace UI_Bingo
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+    
+        private void txtNumeroJugadores_Leave_1(object sender, EventArgs e)
+        {
+            if (txtNumeroJugadores.Text.Equals("")) { txtNumeroJugadores.Text = "0";}
+            this.cmbNumeroJugadores.Items.Clear();
+            Console.WriteLine("Dentro del IF");
+            for (int i = 0; i < int.Parse(txtNumeroJugadores.Text); i++)
+            {
+                Console.WriteLine("Dentro del for");
+                this.cmbNumeroJugadores.Items.Add(i + 1);
+            }
+        }
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            txtNumeroJugadores.Enabled = false;
+            txtNumMax.Enabled = false;
         }
     }
+
+
 }

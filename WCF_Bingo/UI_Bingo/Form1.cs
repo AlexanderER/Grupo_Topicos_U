@@ -25,8 +25,8 @@ namespace UI_Bingo
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Form2 myNewForm = new Form2();
-            myNewForm.Show();
+            Form2 ventana = new Form2();
+            ventana.Show();
 
         }
     }
