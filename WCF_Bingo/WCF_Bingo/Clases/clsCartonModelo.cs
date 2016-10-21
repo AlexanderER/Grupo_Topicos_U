@@ -22,14 +22,14 @@ namespace WCF_Bingo.Clases
 
         public clsCartonModelo()
         {
-            List<List<clsCelda>> columnas = new List<List<clsCelda>>();
+            this.columnas = new List<List<clsCelda>>();
             for (int x = 1; x <= 5; x++)
             {
-                Columnas.Add(new List<clsCelda>());
+                columnas.Add(new List<clsCelda>());
                 for (int p = 1; p <= 5; p++)
                 {
                     clsCelda celda = new clsCelda();
-                    Columnas[x].Add(celda);
+                    columnas[x][p].Add(celda);
                 }
             }
 

@@ -11,7 +11,7 @@ namespace WCF_Bingo.Clases
 
         #region Variables
 
-        private string nombreJugador;
+        private int nombreJugador;
         private List<clsCarton> listaCartones;
 
         #endregion
@@ -20,7 +20,7 @@ namespace WCF_Bingo.Clases
 
         #region Sets y Gets
 
-        public string NombreJugador
+        public int NombreJugador
         {
             get
             {
@@ -56,7 +56,7 @@ namespace WCF_Bingo.Clases
 
         }
 
-        public clsJugador(string nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
+        public clsJugador(int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
         {
             this.NombreJugador = nombreJugador;
             agregarCartones(cantidadCartones,cantidadNumerosAJugar,modalidad);

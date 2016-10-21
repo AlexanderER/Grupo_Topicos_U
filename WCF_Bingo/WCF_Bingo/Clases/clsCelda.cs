@@ -17,6 +17,19 @@ namespace WCF_Bingo.Clases
 
         #endregion
 
+        public clsCelda() { }
+
+        public clsCelda(bool aJugar)
+        {
+            this.AJugar = aJugar;
+        }
+
+        public clsCelda(int numero, bool aJugar)
+        {
+            this.numero = numero;
+            this.AJugar = aJugar;
+        }
+
         //----------------------------------------------------------------------------------
 
         #region Sets y Gets

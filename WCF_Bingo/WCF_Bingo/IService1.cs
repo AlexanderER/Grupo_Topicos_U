@@ -31,5 +31,13 @@ namespace WCF_Bingo
         #endregion
 
 
+        #region Generacion de Numero Aleatorio
+
+        [OperationContract]
+        List<clsJugador> crearJugador(List<clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
+
+        #endregion
+
+
     }
 }

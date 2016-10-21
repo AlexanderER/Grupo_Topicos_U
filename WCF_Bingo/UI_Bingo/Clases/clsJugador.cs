@@ -10,7 +10,7 @@ namespace UI_Bingo.Clases
     {
         #region Variables
 
-        private string nombreJugador;
+        private int nombreJugador;
         private List<clsCarton> listaCartones;
 
         #endregion

@@ -50,7 +50,7 @@ namespace WCF_Bingo.Clases
                     int suelo = segmentos * (p - 1);
                     int techo = segmentos * p;
                     int nuevoNumero;
-                    clsCelda celda = new clsCelda();
+                    bool aJugarEnCelda;
                     Random rnd = new Random();
 
                     do
@@ -60,12 +60,10 @@ namespace WCF_Bingo.Clases
                     while (numerosYaSorteados.Contains(nuevoNumero));
                     numerosYaSorteados.Add(nuevoNumero);
 
-                    celda.Numero = nuevoNumero;
-
                     //x-1 ya que el for empieza en 1 y la lista en 0
-                    celda.AJugar = cartonModalidad.Columnas[x-1][p-1].AJugar;
+                    aJugarEnCelda = cartonModalidad.Columnas[x-1][p-1].AJugar;
 
-                    Columnas[x].Add(celda);
+                    Columnas[x].Add(new clsCelda(nuevoNumero,aJugarEnCelda));
 
                 }
             }

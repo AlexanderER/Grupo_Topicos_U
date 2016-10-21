@@ -11,6 +11,12 @@ namespace WCF_Bingo
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class Service1 : IService1
     {
+        public List<clsJugador> crearJugador(List<clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
+        {
+            clsJugador jugador = new clsJugador(nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
+            listaJugadores.Add(jugador);
+            return listaJugadores;
+        }
         #region Jugador
 
         //public clsJugador getJugador(string p_sNombreUsuario, int p_iCantidadCartones, List<clsCarton> p_ListaCartones)
@@ -49,6 +55,7 @@ namespace WCF_Bingo
         //}
 
         #endregion
+
 
 
         #region Generacion de Numero Aleatorio
@@ -107,6 +114,8 @@ namespace WCF_Bingo
             //p_lista.Add(iNumero);
             return iNumeroAleatorio;
         }
+
+
 
 
         #endregion
