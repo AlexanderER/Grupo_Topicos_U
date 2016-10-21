@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Bingo", "UI_Bingo\UI_Bin
 		{DAFB8A8C-0649-4F59-B635-F10994DEE255} = {DAFB8A8C-0649-4F59-B635-F10994DEE255}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba", "Prueba\Prueba.csproj", "{FC7BA150-6CDF-481C-AF3F-52FC54FD4132}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DAFB8A8C-0649-4F59-B635-F10994DEE255} = {DAFB8A8C-0649-4F59-B635-F10994DEE255}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,10 @@ Global
 		{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7BA150-6CDF-481C-AF3F-52FC54FD4132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7BA150-6CDF-481C-AF3F-52FC54FD4132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7BA150-6CDF-481C-AF3F-52FC54FD4132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7BA150-6CDF-481C-AF3F-52FC54FD4132}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
