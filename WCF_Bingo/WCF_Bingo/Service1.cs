@@ -187,7 +187,39 @@ namespace WCF_Bingo
             return listaJugadores;
         }
 
+
+
         #endregion
 
+        #region regresar jugadores ganadores
+        public List<clsJugador> jugadoresGanadores(List<clsJugador> listaJugadores)
+        {
+            List<clsJugador> listaARetornar = new List<clsJugador>();
+
+            for (int i = 0; i < listaJugadores.Count; i++)
+            {
+                
+                List<clsCarton> listaCartones = new List<clsCarton>();
+
+                for (int x = 0; x < listaJugadores[i].ListaCartones.Count; x++)
+                {                    
+                    if (listaJugadores[i].ListaCartones[x].NumeroAReducirParaGanar==0)
+                    {
+                        listaCartones.Add(listaJugadores[i].ListaCartones[x]);
+                    }
+                }
+
+                if (listaCartones.Count > 0)
+                {
+                    clsJugador jugador = new clsJugador();
+                    jugador.ListaCartones = listaCartones;
+                    jugador.NombreJugador = listaJugadores[i].NombreJugador;
+                    listaARetornar.Add(jugador);
+                }                
+                
+            }
+            return listaARetornar;
+        }
+        #endregion
     }
 }

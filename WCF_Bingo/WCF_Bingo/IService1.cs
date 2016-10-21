@@ -30,7 +30,6 @@ namespace WCF_Bingo
 
         #endregion
 
-
         #region Crear Jugador
 
         [OperationContract]
@@ -42,6 +41,13 @@ namespace WCF_Bingo
 
         [OperationContract]
         List<clsJugador> actualizarEstados(List<clsJugador> listaJugadores, int numeroAleatorio);
+
+        #endregion
+
+        #region regresar jugadores ganadores
+
+        [OperationContract]
+        List<clsJugador> jugadoresGanadores(List<clsJugador> listaJugadores);
 
         #endregion
 
