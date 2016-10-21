@@ -26,13 +26,6 @@ namespace UI_Bingo.Clases
 
         }
 
-        public clsJugador(int nombreJugador, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
-        {
-            this.NombreJugador = nombreJugador;
-            listaCartones = new List<clsCarton>();
-            agregarCartones(cantidadCartones, cantidadNumerosAJugar, modalidad);
-        }
-
         #endregion
 
         //----------------------------------------------------------------------------------

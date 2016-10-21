@@ -23,17 +23,6 @@ namespace UI_Bingo.Clases
 
         public clsCelda() { }
 
-        public clsCelda(bool aJugar)
-        {
-            this.AJugar = aJugar;
-        }
-
-        public clsCelda(int numero, bool aJugar)
-        {
-            this.numero = numero;
-            this.AJugar = aJugar;
-        }
-
         #endregion
 
         //----------------------------------------------------------------------------------
