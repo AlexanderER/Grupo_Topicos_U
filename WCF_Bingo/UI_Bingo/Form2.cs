@@ -70,8 +70,16 @@ namespace UI_Bingo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            txtNumeroJugadores.Enabled = false;
-            txtNumMax.Enabled = false;
+            if (txtNumeroCartones.Text.Equals("") | (cmbNumeroJugadores.SelectedIndex.Equals(null))) { MessageBox.Show("No ha ingresado valores válidos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1); }
+            else
+            {
+                txtNumeroJugadores.Enabled = false;
+                txtNumeroCartones.Text = "";
+                txtNumMax.Enabled = false;
+                cmbNumeroJugadores.Items.RemoveAt(cmbNumeroJugadores.SelectedIndex);
+            }
+            if (cmbNumeroJugadores.Items.Count == 0) {
+                cmbNumeroJugadores.Enabled = false; }
         }
 
         private void button1_Click(object sender, EventArgs e)
