@@ -36,13 +36,16 @@
             this.btnJugar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvNumerosFavorecidos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNumerosFavorecidos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dgvNumerosFavorecidos);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -51,15 +54,15 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(423, 458);
+            this.panel1.Size = new System.Drawing.Size(490, 458);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UI_Bingo.Properties.Resources.unnamed;
-            this.pictureBox1.Location = new System.Drawing.Point(216, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(309, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(195, 181);
+            this.pictureBox1.Size = new System.Drawing.Size(175, 159);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -82,7 +85,7 @@
             this.button2.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(10, 397);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(401, 44);
+            this.button2.Size = new System.Drawing.Size(474, 44);
             this.button2.TabIndex = 3;
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
@@ -121,14 +124,22 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(401, 120);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(474, 120);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dgvNumerosFavorecidos
+            // 
+            this.dgvNumerosFavorecidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNumerosFavorecidos.Location = new System.Drawing.Point(182, 25);
+            this.dgvNumerosFavorecidos.Name = "dgvNumerosFavorecidos";
+            this.dgvNumerosFavorecidos.Size = new System.Drawing.Size(121, 159);
+            this.dgvNumerosFavorecidos.TabIndex = 7;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 454);
+            this.ClientSize = new System.Drawing.Size(493, 454);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
@@ -137,6 +148,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNumerosFavorecidos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,5 +162,6 @@
         private System.Windows.Forms.Button btnJugar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView dgvNumerosFavorecidos;
     }
 }
