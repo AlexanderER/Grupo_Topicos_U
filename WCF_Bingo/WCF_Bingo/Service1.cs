@@ -11,6 +11,8 @@ namespace WCF_Bingo
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class Service1 : IService1
     {
+
+        #region Crear Jugador
         public List<clsJugador> crearJugador(List<clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
         {
             clsJugador jugador = new clsJugador(nombreUsuario,cantidadCartones,cantidadNumerosAJugar,modalidad);
@@ -57,6 +59,7 @@ namespace WCF_Bingo
             listaJugadores.Add(jugador);
             return listaJugadores;
         }
+        #endregion
 
         #region Jugador
 
@@ -156,9 +159,35 @@ namespace WCF_Bingo
             return iNumeroAleatorio;
         }
 
+        #endregion
 
+        #region Actualizar Estado de Cartones
 
+        public List<clsJugador> actualizarEstados(List<clsJugador> listaJugadores, int numeroAleatorio)
+        {
+            //recorre jugadores
+            for (int i = 0; i < listaJugadores.Count; i++)
+            {
+                //recorre cartones
+                for (int p = 0; p < listaJugadores[i].ListaCartones.Count; p++)
+                {
+                    //recorre celdas
+                    for (int m = 0; m < 5; m++)
+                    {
+                        for (int n = 0; n < 5; n++)
+                        {
+                            if (numeroAleatorio == listaJugadores[i].ListaCartones[p].Columnas[m][n].Numero) {
+                                //NumeroAReducirParaGanar = NumeroAReducirParaGanar - 1
+                                listaJugadores[i].ListaCartones[p].NumeroAReducirParaGanar = listaJugadores[i].ListaCartones[p].NumeroAReducirParaGanar - 1;
+                            }
+                        }
+                    }
+                }
+            }
+            return listaJugadores;
+        }
 
         #endregion
+
     }
 }

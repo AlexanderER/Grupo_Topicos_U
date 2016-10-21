@@ -56,7 +56,7 @@ namespace WCF_Bingo.Clases
 
         }
 
-        public clsJugador(int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
+        public clsJugador(int nombreJugador, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
         {
             this.NombreJugador = nombreJugador;
             listaCartones = new List<clsCarton>();

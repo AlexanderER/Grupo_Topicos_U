@@ -55,7 +55,7 @@ namespace WCF_Bingo.Clases
 
                     do
                     {
-                        nuevoNumero = rnd.Next(suelo, techo);
+                        nuevoNumero = rnd.Next(suelo+1, techo+1);
                     }
                     while (numerosYaSorteados.Contains(nuevoNumero));
                     numerosYaSorteados.Add(nuevoNumero);
