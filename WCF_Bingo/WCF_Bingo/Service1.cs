@@ -234,6 +234,15 @@ namespace WCF_Bingo
             }
             return null;
         }
+
+
+        #endregion
+
+        #region consultar cantidad jugadores
+        public int cantidadJugadores(List<clsJugador> listaJugadores)
+        {
+            return listaJugadores.Count;
+        }
         #endregion
     }
 }

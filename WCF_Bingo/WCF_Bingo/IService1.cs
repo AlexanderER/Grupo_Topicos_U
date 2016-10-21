@@ -56,5 +56,10 @@ namespace WCF_Bingo
         clsCarton consultarCarton(List<clsJugador> listaJugadores, int numeroJugador, int indiceCarton);
         #endregion
 
+        #region consultar cantidad jugadores
+        [OperationContract]
+        int cantidadJugadores(List<clsJugador> listaJugadores);
+        #endregion
+
     }
 }
