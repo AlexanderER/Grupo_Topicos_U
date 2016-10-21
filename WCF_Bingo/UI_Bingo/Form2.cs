@@ -80,7 +80,7 @@ namespace UI_Bingo
             }
             if (cmbNumeroJugadores.Items.Count == 0) {
                 cmbNumeroJugadores.Enabled = false; }
-        }
+            }
 
         private void button1_Click(object sender, EventArgs e)
         {

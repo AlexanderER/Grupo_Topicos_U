@@ -21,5 +21,11 @@ namespace UI_Bingo
         {
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form4 ventana = new Form4();
+            ventana.Show();
+         }
     }
 }
