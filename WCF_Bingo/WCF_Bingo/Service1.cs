@@ -221,5 +221,19 @@ namespace WCF_Bingo
             return listaARetornar;
         }
         #endregion
+
+        #region consultar carton
+        public clsCarton consultarCarton(List<clsJugador> listaJugadores, int numeroJugador, int indiceCarton)
+        {
+            for (int i = 0; i < listaJugadores.Count; i++)
+            {
+                if (listaJugadores[i].NombreJugador == numeroJugador)
+                {
+                    return listaJugadores[i].ListaCartones[indiceCarton];
+                }
+            }
+            return null;
+        }
+        #endregion
     }
 }
