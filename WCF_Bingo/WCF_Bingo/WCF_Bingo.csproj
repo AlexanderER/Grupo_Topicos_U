@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\clsCarton.cs" />
-    <Compile Include="Clases\clsCartonModelo.cs" />
     <Compile Include="Clases\clsCelda.cs" />
     <Compile Include="Clases\clsJugador.cs" />
     <Compile Include="IService1.cs" />
