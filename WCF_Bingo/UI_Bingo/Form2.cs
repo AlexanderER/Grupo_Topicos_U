@@ -74,6 +74,7 @@ namespace UI_Bingo
             else
             {
                 txtNumeroJugadores.Enabled = false;
+                cmbTiposJuego.Enabled = false;
                 txtNumeroCartones.Text = "";
                 txtNumMax.Enabled = false;
                 cmbNumeroJugadores.Items.RemoveAt(cmbNumeroJugadores.SelectedIndex);
