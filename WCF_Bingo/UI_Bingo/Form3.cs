@@ -37,48 +37,63 @@ namespace UI_Bingo
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            if (clsGlobal.ListaNumerosFavorecidos.Count == clsGlobal.iLimiteNumerosBingo)
+            try
             {
-                MessageBox.Show("Ya no quedan numero por jugar.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (clsGlobal.ListaNumerosFavorecidos.Count == clsGlobal.iLimiteNumerosBingo)
+                {
+                    MessageBox.Show("Ya no quedan numero por jugar.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //----------------------------------------------------------------------------------------   Obtengo el Numero 
+                    // Traslado la lista a un arreglo ya que el metodo solicita un arreglo
+                    Int32[] arrayDeNumeros = new Int32[clsGlobal.ListaNumerosFavorecidos.Count];
+                    clsGlobal.ListaNumerosFavorecidos.CopyTo(arrayDeNumeros);
+
+                    // Instancio el WCF y ejecuto el proceso de obtener numero
+                    miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+                    Int32 iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, arrayDeNumeros);
+
+                    // Agrego el numero a la Lista de Numero Favorecidos
+                    clsGlobal.ListaNumerosFavorecidos.Add(iNumeroObtenido);
+
+                    // Muestro en pantalla el numero que salio
+                    MessageBox.Show("Con la letra de la: " + this.obtenerLetraNumeroFavorecido(iNumeroObtenido) +
+                                    Environment.NewLine +
+                                    Environment.NewLine +
+                                    "El Número: " + iNumeroObtenido.ToString());
+
+                    // Actualizo DataGridView
+                    this.RefrescarDataGridNumFavorecidos();
+
+
+
+
+
+                    //----------------------------------------------------------------------------------------   Hacer Validaciones en Cartones
+                    //////////////////////////////////////////
+                    // Aqui hacer el llamado para hacer     //
+                    // las validaciones en los cartones     //
+                    //////////////////////////////////////////
+
+                }
+
             }
-            else
-            {
-                //----------------------------------------------------------------------------------------   Obtengo el Numero 
-                // Traslado la lista a un arreglo ya que el metodo solicita un arreglo
-                Int32[] arrayDeNumeros = new Int32[clsGlobal.ListaNumerosFavorecidos.Count];
-                clsGlobal.ListaNumerosFavorecidos.CopyTo(arrayDeNumeros);
+            catch (Exception ex) {
 
-                // Instancio el WCF y ejecuto el proceso de obtener numero
-                miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
-                Int32 iNumeroObtenido                 = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, arrayDeNumeros);
-
-                // Agrego el numero a la Lista de Numero Favorecidos
-                clsGlobal.ListaNumerosFavorecidos.Add(iNumeroObtenido);
-
-                // Muestro en pantalla el numero que salio
-                MessageBox.Show("Con la letra de la: " + this.obtenerLetraNumeroFavorecido(iNumeroObtenido) + 
-                                Environment.NewLine +
-                                Environment.NewLine +
-                                "El Número: " + iNumeroObtenido.ToString());
-
-                // Actualizo DataGridView
-                this.RefrescarDataGridNumFavorecidos();
+                String mensaje;
+                String titulo;
+                mensaje = "No se logró obtener el número de forma correcta";
+                titulo = "Atención";
 
 
+                MessageBox.Show(mensaje,titulo,MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-
-
-                //----------------------------------------------------------------------------------------   Hacer Validaciones en Cartones
-                //////////////////////////////////////////
-                // Aqui hacer el llamado para hacer     //
-                // las validaciones en los cartones     //
-                //////////////////////////////////////////
-
+                
             }
 
-
-
-
+            
         }
 
         #endregion
