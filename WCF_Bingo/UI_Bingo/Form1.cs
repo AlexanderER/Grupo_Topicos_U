@@ -29,5 +29,11 @@ namespace UI_Bingo
             ventana.Show();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 ventana = new Form3();
+            ventana.Show();
+        }
     }
 }

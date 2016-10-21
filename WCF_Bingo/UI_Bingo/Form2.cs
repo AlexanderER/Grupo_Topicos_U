@@ -73,6 +73,18 @@ namespace UI_Bingo
             txtNumeroJugadores.Enabled = false;
             txtNumMax.Enabled = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 ventana = new Form3();
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void txtNumMax_Leave(object sender, EventArgs e)
+        {
+            if (int.Parse(txtNumMax.Text) < 25) { MessageBox.Show("Digite unicamente números mayores a 24", "Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1); }
+        }
     }
 
 

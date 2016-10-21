@@ -231,6 +231,7 @@
             this.txtNumMax.Name = "txtNumMax";
             this.txtNumMax.Size = new System.Drawing.Size(53, 20);
             this.txtNumMax.TabIndex = 22;
+            this.txtNumMax.Leave += new System.EventHandler(this.txtNumMax_Leave);
             // 
             // button2
             // 
@@ -252,6 +253,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Iniciar Juego";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
