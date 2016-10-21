@@ -27,5 +27,28 @@ namespace UI_Bingo
             Form4 ventana = new Form4();
             ventana.Show();
          }
+
+
+
+
+
+
+        #region Eventos
+
+        private void btnJugar_Click(object sender, EventArgs e)
+        {
+            miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+
+            Int32 iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, null);
+
+            //clsGlobal.ListaNumerosFavorecidos.Add(iNumeroObtenido);
+
+            MessageBox.Show("Salio el: " + iNumeroObtenido.ToString());
+        }
+
+        #endregion
+
+
+
     }
 }

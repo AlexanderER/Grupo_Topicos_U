@@ -91,6 +91,9 @@ namespace UI_Bingo
 
         private void txtNumMax_Leave(object sender, EventArgs e)
         {
+            clsGlobal.iLimiteNumerosBingo = Convert.ToInt32(txtNumMax.Text);
+
+
             if (int.Parse(txtNumMax.Text) < 25) { MessageBox.Show("Digite unicamente números mayores a 24", "Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1); }
         }
     }
