@@ -24,9 +24,16 @@ namespace WCF_Bingo.Clases
 
         public clsCarton() { }
 
+        public clsCarton(int cantidadNumerosAJugar, int numeroAReducirParaGanar, List<List<clsCelda>> columnas)
+        {
+            this.CantidadNumerosAJugar = cantidadNumerosAJugar;
+            this.numeroAReducirParaGanar = numeroAReducirParaGanar;
+            this.Columnas = columnas;
+        }
+
         public clsCarton(int cantidadNumerosAJugar, int modalidad)
         {
-            columnas = new List<List<clsCelda>>();
+            Columnas = new List<List<clsCelda>>();
             this.CantidadNumerosAJugar = cantidadNumerosAJugar;
             llenarCarton(elegirModalidad(modalidad));
             numeroAReducirParaGanar = definirNumeroAReducir();
@@ -44,11 +51,12 @@ namespace WCF_Bingo.Clases
             int segmentos = CantidadNumerosAJugar / 5;
             for (int x = 1; x <= 5; x++)
             {
+                int suelo = segmentos * (x - 1);
+                int techo = segmentos * x;
                 Columnas.Add(new List<clsCelda>());
                 for (int p = 1; p <= 5; p++)
                 {
-                    int suelo = segmentos * (p - 1);
-                    int techo = segmentos * p;
+                    
                     int nuevoNumero;
                     bool aJugarEnCelda;
                     Random rnd = new Random();
