@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF_Bingo", "WCF_Bingo\WCF_Bingo.csproj", "{DAFB8A8C-0649-4F59-B635-F10994DEE255}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Bingo", "UI_Bingo\UI_Bingo.csproj", "{CFD6C35A-9681-49D1-88A5-E2C1CB7E3A8A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DAFB8A8C-0649-4F59-B635-F10994DEE255} = {DAFB8A8C-0649-4F59-B635-F10994DEE255}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
