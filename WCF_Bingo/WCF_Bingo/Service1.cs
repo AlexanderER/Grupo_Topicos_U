@@ -13,16 +13,45 @@ namespace WCF_Bingo
     {
         #region Jugador
 
-        public clsJugador getJugador(string p_sNombreUsuario, int p_iCantidadCartones, List<clsCarton> p_ListaCartones)
-        {
-            clsJugador miJugador = new clsJugador();
+        //public clsJugador getJugador(string p_sNombreUsuario, int p_iCantidadCartones, List<clsCarton> p_ListaCartones)
+        //{
+        //    clsJugador miJugador = new clsJugador();
 
-            miJugador.sNombreUsuario = p_sNombreUsuario;
-            miJugador.iCantidadCartones = p_iCantidadCartones;
-            miJugador.listaCartones = p_ListaCartones;
+        //    miJugador.sNombreUsuario = p_sNombreUsuario;
+        //    miJugador.iCantidadCartones = p_iCantidadCartones;
+        //    miJugador.listaCartones = p_ListaCartones;
 
-            return miJugador;
-        }
+        //    return miJugador;
+        //}
+
+
+        //public bool YaExisteElJugador(string p_sNombreJugador, List<clsJugador> p_ListaJugadores)
+        //{
+        //    Boolean bExiste = false;
+
+        //    if (p_ListaJugadores != null)   // Si es diferente de nulo
+        //    {
+        //        if (p_ListaJugadores.Count >= 1)    // Si tiene elementos
+        //        {
+        //            foreach (clsJugador clsJugTemp in p_ListaJugadores)  // Obtengo cada elemento de la Lista de Jugadores
+        //            {
+        //                String sTempNombreJugador = clsJugTemp.sNombreUsuario;  // Obtengo el nombre del Jugador
+
+        //                if (sTempNombreJugador == p_sNombreJugador) // Valido que no sean iguales
+        //                {
+        //                    bExiste = true;
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    return bExiste;
+        //}
+
+        #endregion
+
+
+        #region Generacion de Numero Aleatorio
 
 
         public Int32 GenerarNumero(Int32 p_iNumeroTecho, List<Int32> p_lista)
@@ -37,27 +66,36 @@ namespace WCF_Bingo
 
             do
             {
-                iNumeroAleatorio = aleatorio.Next(1, p_iNumeroTecho);
+                iNumeroAleatorio = aleatorio.Next(1, (p_iNumeroTecho + 1));
 
-                if (p_lista != null) {
+                if (p_lista != null)
+                {
 
-                    if (p_lista.Count >= 1) {
+                    if (p_lista.Count >= 1)
+                    {
 
-                        if (p_lista.Contains(iNumeroAleatorio)){
+                        if (p_lista.Contains(iNumeroAleatorio))
+                        {
 
                             bExiste = true;
 
-                        }else{
+                        }
+                        else
+                        {
 
                             bExiste = false;
                         }
 
-                    } else{
+                    }
+                    else
+                    {
 
                         bExiste = false;
                     }
 
-                } else{
+                }
+                else
+                {
 
                     bExiste = false;
 
@@ -70,30 +108,7 @@ namespace WCF_Bingo
             return iNumeroAleatorio;
         }
 
-        public bool YaExisteElJugador(string p_sNombreJugador, List<clsJugador> p_ListaJugadores)
-        {
-            Boolean bExiste = false;
-
-            if (p_ListaJugadores != null)   // Si es diferente de nulo
-            {
-                if (p_ListaJugadores.Count >= 1)    // Si tiene elementos
-                {
-                    foreach (clsJugador clsJugTemp in p_ListaJugadores)  // Obtengo cada elemento de la Lista de Jugadores
-                    {
-                        String sTempNombreJugador = clsJugTemp.sNombreUsuario;  // Obtengo el nombre del Jugador
-
-                        if (sTempNombreJugador == p_sNombreJugador) // Valido que no sean iguales
-                        {
-                            bExiste = true;
-                        }
-                    }
-                }
-            }
-
-            return bExiste;
-        }
 
         #endregion
-
     }
 }

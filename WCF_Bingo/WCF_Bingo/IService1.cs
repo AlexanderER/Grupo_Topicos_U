@@ -14,16 +14,22 @@ namespace WCF_Bingo
     {
         #region Jugador
 
-        [OperationContract]
-        clsJugador getJugador(String p_sNombreUsuario, Int32 p_iCantidadCartones, List<clsCarton> p_ListaCartones);
+        //[OperationContract]
+        //clsJugador getJugador(String p_sNombreUsuario, Int32 p_iCantidadCartones, List<clsCarton> p_ListaCartones);
 
-        
+        //[OperationContract]
+        //Boolean YaExisteElJugador(String p_sNombreJugador, List<clsJugador> p_ListaJugadores);
+
+        #endregion
+
+
+        #region Generacion de Numero Aleatorio
+
         [OperationContract]
         Int32 GenerarNumero(Int32 p_iNumeroTecho, List<Int32> p_lista);
 
-        [OperationContract]
-        Boolean YaExisteElJugador(String p_sNombreJugador, List<clsJugador> p_ListaJugadores);
-
         #endregion
+
+
     }
 }
