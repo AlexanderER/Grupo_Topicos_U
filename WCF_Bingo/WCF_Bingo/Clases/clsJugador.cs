@@ -108,13 +108,13 @@ namespace WCF_Bingo.Clases
                         //valida si encuentra una diferencia
                         if (carton1.Columnas[m][n].AJugar != carton2.Columnas[m][n].AJugar)
                         {
-                            return true;
+                            return false;
                         }
                     }
                     
                 }
             }
-            return false;
+            return true;
         }
 
         #endregion
