@@ -17,9 +17,8 @@ namespace UI_Bingo
             InitializeComponent();
             // Instancio el WCF y ejecuto el proceso de obtener numero
             miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
-          //  Int32 iNumeroObtenido = WCF_Service.cantidadJugadores(clsGlobal.ListaJugador);
-
-            for (int i = 0; i < int.Parse(WCF_Service.cantidadJugadores(clsGlobal.ListaJugador)); i++)
+      
+            for (int i = 0; i < WCF_Service.cantidadJugadores(clsGlobal.ListaJugador); i++)
             {
 
                 this.cmbNumJugador.Items.Add(i + 1);
