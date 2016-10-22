@@ -14,6 +14,7 @@ namespace UI_Bingo.Clases
 
         private bool aJugar;
         private int numero;
+        private bool numerojugado;
 
         #endregion
 
@@ -52,6 +53,19 @@ namespace UI_Bingo.Clases
             set
             {
                 numero = value;
+            }
+        }
+
+        public bool Numerojugado
+        {
+            get
+            {
+                return numerojugado;
+            }
+
+            set
+            {
+                numerojugado = value;
             }
         }
 
