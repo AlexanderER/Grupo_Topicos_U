@@ -35,9 +35,17 @@ namespace UI_Bingo
             this.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void cmbNumJugador_Leave(object sender, EventArgs e)
+        {
+            this.cmbNumCarton.Items.Clear();
+            miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+
+            for (int i = 0; i < WCF_Service.cantidadCartonesPorJugador(clsGlobal.ListaJugador, Convert.ToInt32(this.cmbNumJugador.Text)); i++)
+            {
+
+                this.cmbNumCarton.Items.Add(i + 1);
+            }
         }
     }
 }

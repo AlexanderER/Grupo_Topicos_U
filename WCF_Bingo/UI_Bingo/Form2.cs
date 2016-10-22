@@ -91,6 +91,7 @@ namespace UI_Bingo
             {
                 cmbNumeroJugadores.Enabled = false;
                 txtNumeroCartones.Enabled = false;
+                btnAdd.Enabled = false;
             }
          
 
