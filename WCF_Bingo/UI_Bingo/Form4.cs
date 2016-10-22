@@ -179,17 +179,71 @@ namespace UI_Bingo
                 this.lbl30.ForeColor = System.Drawing.Color.White;
                 lbl30.Text = Convert.ToString(temp[0].Numero);
             }
-            lbl31.Text = Convert.ToString(temp[1].Numero);
-            lbl32.Text = Convert.ToString(temp[2].Numero);
-            lbl33.Text = Convert.ToString(temp[3].Numero);
-            lbl34.Text = Convert.ToString(temp[4].Numero);
+            if (temp[1].AJugar == true) { lbl31.Text = Convert.ToString(temp[1].Numero); }
+            else
+            {
+                this.lbl31.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl31.ForeColor = System.Drawing.Color.White;
+                lbl31.Text = Convert.ToString(temp[1].Numero);
+            }
+            if (temp[2].AJugar == true) { lbl32.Text = Convert.ToString(temp[2].Numero); }
+            else
+            {
+                this.lbl32.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl32.ForeColor = System.Drawing.Color.White;
+                lbl32.Text = Convert.ToString(temp[2].Numero);
+            }
+            if (temp[3].AJugar == true) { lbl33.Text = Convert.ToString(temp[3].Numero); }
+            else
+            {
+                this.lbl33.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl33.ForeColor = System.Drawing.Color.White;
+                lbl33.Text = Convert.ToString(temp[3].Numero);
+            }
+            if (temp[4].AJugar == true) { lbl34.Text = Convert.ToString(temp[4].Numero); }
+            else
+            {
+                this.lbl34.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl34.ForeColor = System.Drawing.Color.White;
+                lbl34.Text = Convert.ToString(temp[4].Numero);
+            }
 
             temp = carton.Columnas[4];
-            lbl40.Text = Convert.ToString(temp[0].Numero);
-            lbl41.Text = Convert.ToString(temp[1].Numero);
-            lbl42.Text = Convert.ToString(temp[2].Numero);
-            lbl43.Text = Convert.ToString(temp[3].Numero);
-            lbl44.Text = Convert.ToString(temp[4].Numero);
+            if (temp[0].AJugar == true) { lbl40.Text = Convert.ToString(temp[0].Numero); }
+            else
+            {
+                this.lbl40.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl40.ForeColor = System.Drawing.Color.White;
+                lbl40.Text = Convert.ToString(temp[0].Numero);
+            }
+            if (temp[1].AJugar == true) { lbl41.Text = Convert.ToString(temp[1].Numero); }
+            else
+            {
+                this.lbl41.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl41.ForeColor = System.Drawing.Color.White;
+                lbl41.Text = Convert.ToString(temp[1].Numero);
+            }
+            if (temp[2].AJugar == true) { lbl42.Text = Convert.ToString(temp[2].Numero); }
+            else
+            {
+                this.lbl42.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl42.ForeColor = System.Drawing.Color.White;
+                lbl42.Text = Convert.ToString(temp[2].Numero);
+            }
+            if (temp[3].AJugar == true) { lbl43.Text = Convert.ToString(temp[3].Numero); }
+            else
+            {
+                this.lbl43.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl43.ForeColor = System.Drawing.Color.White;
+                lbl43.Text = Convert.ToString(temp[3].Numero);
+            }
+            if (temp[4].AJugar == true) { lbl44.Text = Convert.ToString(temp[4].Numero); }
+            else
+            {
+                this.lbl44.BackColor = System.Drawing.Color.MidnightBlue;
+                this.lbl44.ForeColor = System.Drawing.Color.White;
+                lbl44.Text = Convert.ToString(temp[4].Numero);
+            }
 
         }
 
