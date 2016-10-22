@@ -93,10 +93,16 @@ namespace WCF_Bingo.Clases
                 {
                     for (int q = 0; q < 5; q++)
                     {
-                        //valida si encuentra una diferencia
-                        if (!(listaCartones[i].Columnas[p][q].Numero == carton.Columnas[p][q].Numero)) {
-                            similar = false;
+                        //ignorar 3,3 (numero del centro)
+                        if (!(q==3 && p==3))
+                        {
+                            //valida si encuentra una diferencia
+                            if (!(listaCartones[i].Columnas[p][q].Numero == carton.Columnas[p][q].Numero))
+                            {
+                                similar = false;
+                            }
                         }
+                        
                     }
                 }
                 if (similar) {

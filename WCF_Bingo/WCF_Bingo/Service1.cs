@@ -38,11 +38,14 @@ namespace WCF_Bingo
                             {
                                 for (int q = 0; q < 5; q++)
                                 {
-                                    //valida si encuentra una diferencia
-                                    if (!(listaJugadores[x].ListaCartones[i].Columnas[p][q].Numero == jugador.ListaCartones[z].Columnas[p][q].Numero))
+                                    if (!(q == 3 && p == 3))
                                     {
-                                        similar = false;
-                                    }
+                                        //valida si encuentra una diferencia
+                                        if (!(listaJugadores[x].ListaCartones[i].Columnas[p][q].Numero == jugador.ListaCartones[z].Columnas[p][q].Numero))
+                                        {
+                                            similar = false;
+                                        }
+                                    }                                    
                                 }
                             }
                             if (similar)
