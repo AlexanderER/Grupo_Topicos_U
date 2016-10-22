@@ -182,10 +182,9 @@ namespace UI_Bingo
             // Aplico Formato
             this.dgvNumerosFavorecidos.Columns.Clear();
             this.aplicarFormatoDataGrid(this.dgvNumerosFavorecidos);
-             
+
             // Agrego Columnas
             this.crearColumnaGrid("NUMERO", "Número", 60, this.dgvNumerosFavorecidos);
-            this.crearColumnaGrid("Numero", "Numero Ordenado", 60, this.dgvNumerosFavorecidos;)
 
             // Agregar Valores
             if (clsGlobal.ListaNumerosFavorecidos != null)   // Si es diferente de nulo
@@ -196,13 +195,7 @@ namespace UI_Bingo
                     {
                         String sNumero = iTemp.ToString();  // Obtengo el nombre del Jugador
                         string[] row = { sNumero };
-
                         this.dgvNumerosFavorecidos.Rows.Add(row);
-                    }
-                    for(int i=0; i<=clsGlobal.ListaNumerosFavorecidos.Count; i++)
-                    {
-                        clsGlobal.ListaNumerosFavorecidos.Sort();
-
                     }
                 }
             }
@@ -336,11 +329,6 @@ namespace UI_Bingo
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvNumerosFavorecidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
