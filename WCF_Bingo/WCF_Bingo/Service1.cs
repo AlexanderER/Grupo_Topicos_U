@@ -268,5 +268,15 @@ namespace WCF_Bingo
         }
         #endregion
 
+        #region ordenar lista
+
+        public List<int> ordenarNumeros(List<int> lista)
+        {
+            lista.Sort();
+            return lista;
+        }
+
+        #endregion
+
     }
 }
