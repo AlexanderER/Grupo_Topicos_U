@@ -13,6 +13,7 @@ namespace WCF_Bingo.Clases
         #region Variables
 
         private bool aJugar;
+        private bool numerojugado;
         private int numero;
 
         #endregion
@@ -21,17 +22,22 @@ namespace WCF_Bingo.Clases
 
         #region Constructor
 
-        public clsCelda() { }
+        public clsCelda()
+        {
+            this.numerojugado = false;
+        }
 
         public clsCelda(bool aJugar)
         {
             this.AJugar = aJugar;
+            this.numerojugado = false;
         }
 
         public clsCelda(int numero, bool aJugar)
         {
             this.numero = numero;
             this.AJugar = aJugar;
+            this.numerojugado = false;
         }
 
         #endregion
@@ -63,6 +69,19 @@ namespace WCF_Bingo.Clases
             set
             {
                 numero = value;
+            }
+        }
+
+        public bool Numerojugado
+        {
+            get
+            {
+                return numerojugado;
+            }
+
+            set
+            {
+                numerojugado = value;
             }
         }
 

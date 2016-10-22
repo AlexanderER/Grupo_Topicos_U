@@ -24,7 +24,7 @@ namespace Prueba
             modalidad = 1;
 
            // int numeroSalido = new int();
-            //numeroSalido = 1;
+            // numeroSalido = 1;
             ServiceReference1.Service1Client servicio = new ServiceReference1.Service1Client();
             List<WCF_Bingo.Clases.clsJugador> resultado = servicio.crearJugador(listaJugadores, nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
 
@@ -45,5 +45,9 @@ namespace Prueba
 
             Assert.AreEqual(ganadores.Count, 1);
         }
+
+        
+
+
     }
 }
