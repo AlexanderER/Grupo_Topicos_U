@@ -27,6 +27,7 @@ namespace WCF_Bingo
                 {
                     bool similar = true;
                     //Recorre cada carton de jugador x
+                 //   if (listaJugadores[x].ListaCartones.)
                     for (int i = 0; i < listaJugadores[x].ListaCartones.Count; i++)
                     {
                         //Recorre nuevo jugador
@@ -253,6 +254,7 @@ namespace WCF_Bingo
                 if (listaJugadores[i].NombreJugador == numeroJugador)
                 {
                     return listaJugadores[i].ListaCartones.Count;
+
                 }
             }
             return 0;

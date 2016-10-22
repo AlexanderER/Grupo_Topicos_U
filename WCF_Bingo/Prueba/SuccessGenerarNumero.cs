@@ -6,14 +6,14 @@ using System.Collections.Generic;
 namespace Prueba
 {
     [TestClass]
-    public class TestGenerarNumero
+    public class SuccessGenerarNumero
     {
         [TestMethod]
         public void TestMethod1()
         {
             Int32 numeroTecho = 5;
 
-            Int32[] lista =new Int32[] { 1, 2, 3 };
+            List<int> lista =new List<int> { 1, 2, 3 };
             
             Int32 numeroEsperado = 4;
 

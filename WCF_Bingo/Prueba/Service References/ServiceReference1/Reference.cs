@@ -8,10 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using WCF_Bingo.Clases;
-
 namespace Prueba.ServiceReference1 {
     
     
@@ -20,46 +16,46 @@ namespace Prueba.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerarNumero", ReplyAction="http://tempuri.org/IService1/GenerarNumeroResponse")]
-        int GenerarNumero(int p_iNumeroTecho, int[] p_lista);
+        int GenerarNumero(int p_iNumeroTecho, System.Collections.Generic.List<int> p_lista);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerarNumero", ReplyAction="http://tempuri.org/IService1/GenerarNumeroResponse")]
-        System.Threading.Tasks.Task<int> GenerarNumeroAsync(int p_iNumeroTecho, int[] p_lista);
+        System.Threading.Tasks.Task<int> GenerarNumeroAsync(int p_iNumeroTecho, System.Collections.Generic.List<int> p_lista);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/crearJugador", ReplyAction="http://tempuri.org/IService1/crearJugadorResponse")]
-        WCF_Bingo.Clases.clsJugador[] crearJugador(WCF_Bingo.Clases.clsJugador[] listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
+        System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> crearJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/crearJugador", ReplyAction="http://tempuri.org/IService1/crearJugadorResponse")]
-        System.Threading.Tasks.Task<WCF_Bingo.Clases.clsJugador[]> crearJugadorAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> crearJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/actualizarEstados", ReplyAction="http://tempuri.org/IService1/actualizarEstadosResponse")]
-        WCF_Bingo.Clases.clsJugador[] actualizarEstados(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroAleatorio);
+        System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> actualizarEstados(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/actualizarEstados", ReplyAction="http://tempuri.org/IService1/actualizarEstadosResponse")]
-        System.Threading.Tasks.Task<WCF_Bingo.Clases.clsJugador[]> actualizarEstadosAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroAleatorio);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> actualizarEstadosAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/jugadoresGanadores", ReplyAction="http://tempuri.org/IService1/jugadoresGanadoresResponse")]
-        WCF_Bingo.Clases.clsJugador[] jugadoresGanadores(WCF_Bingo.Clases.clsJugador[] listaJugadores);
+        System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> jugadoresGanadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/jugadoresGanadores", ReplyAction="http://tempuri.org/IService1/jugadoresGanadoresResponse")]
-        System.Threading.Tasks.Task<WCF_Bingo.Clases.clsJugador[]> jugadoresGanadoresAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> jugadoresGanadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/consultarCarton", ReplyAction="http://tempuri.org/IService1/consultarCartonResponse")]
-        WCF_Bingo.Clases.clsCarton consultarCarton(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador, int indiceCarton);
+        WCF_Bingo.Clases.clsCarton consultarCarton(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/consultarCarton", ReplyAction="http://tempuri.org/IService1/consultarCartonResponse")]
-        System.Threading.Tasks.Task<WCF_Bingo.Clases.clsCarton> consultarCartonAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador, int indiceCarton);
+        System.Threading.Tasks.Task<WCF_Bingo.Clases.clsCarton> consultarCartonAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadJugadores", ReplyAction="http://tempuri.org/IService1/cantidadJugadoresResponse")]
-        int cantidadJugadores(WCF_Bingo.Clases.clsJugador[] listaJugadores);
+        int cantidadJugadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadJugadores", ReplyAction="http://tempuri.org/IService1/cantidadJugadoresResponse")]
-        System.Threading.Tasks.Task<int> cantidadJugadoresAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores);
+        System.Threading.Tasks.Task<int> cantidadJugadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadCartonesPorJugador", ReplyAction="http://tempuri.org/IService1/cantidadCartonesPorJugadorResponse")]
-        int cantidadCartonesPorJugador(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador);
+        int cantidadCartonesPorJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadCartonesPorJugador", ReplyAction="http://tempuri.org/IService1/cantidadCartonesPorJugadorResponse")]
-        System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador);
+        System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -89,70 +85,60 @@ namespace Prueba.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public int GenerarNumero(int p_iNumeroTecho, int[] p_lista) {
+        public int GenerarNumero(int p_iNumeroTecho, System.Collections.Generic.List<int> p_lista) {
             return base.Channel.GenerarNumero(p_iNumeroTecho, p_lista);
         }
         
-        public System.Threading.Tasks.Task<int> GenerarNumeroAsync(int p_iNumeroTecho, int[] p_lista) {
+        public System.Threading.Tasks.Task<int> GenerarNumeroAsync(int p_iNumeroTecho, System.Collections.Generic.List<int> p_lista) {
             return base.Channel.GenerarNumeroAsync(p_iNumeroTecho, p_lista);
         }
         
-        public WCF_Bingo.Clases.clsJugador[] crearJugador(WCF_Bingo.Clases.clsJugador[] listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
+        public System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> crearJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
             return base.Channel.crearJugador(listaJugadores, nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
         }
         
-        public System.Threading.Tasks.Task<WCF_Bingo.Clases.clsJugador[]> crearJugadorAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> crearJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
             return base.Channel.crearJugadorAsync(listaJugadores, nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
         }
         
-        public WCF_Bingo.Clases.clsJugador[] actualizarEstados(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroAleatorio) {
+        public System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> actualizarEstados(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio) {
             return base.Channel.actualizarEstados(listaJugadores, numeroAleatorio);
         }
         
-        public System.Threading.Tasks.Task<WCF_Bingo.Clases.clsJugador[]> actualizarEstadosAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroAleatorio) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> actualizarEstadosAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio) {
             return base.Channel.actualizarEstadosAsync(listaJugadores, numeroAleatorio);
         }
         
-        public WCF_Bingo.Clases.clsJugador[] jugadoresGanadores(WCF_Bingo.Clases.clsJugador[] listaJugadores) {
+        public System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> jugadoresGanadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.jugadoresGanadores(listaJugadores);
         }
         
-        public System.Threading.Tasks.Task<WCF_Bingo.Clases.clsJugador[]> jugadoresGanadoresAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> jugadoresGanadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.jugadoresGanadoresAsync(listaJugadores);
         }
         
-        public WCF_Bingo.Clases.clsCarton consultarCarton(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador, int indiceCarton) {
+        public WCF_Bingo.Clases.clsCarton consultarCarton(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton) {
             return base.Channel.consultarCarton(listaJugadores, numeroJugador, indiceCarton);
         }
         
-        public System.Threading.Tasks.Task<WCF_Bingo.Clases.clsCarton> consultarCartonAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador, int indiceCarton) {
+        public System.Threading.Tasks.Task<WCF_Bingo.Clases.clsCarton> consultarCartonAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton) {
             return base.Channel.consultarCartonAsync(listaJugadores, numeroJugador, indiceCarton);
         }
         
-        public int cantidadJugadores(WCF_Bingo.Clases.clsJugador[] listaJugadores) {
+        public int cantidadJugadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.cantidadJugadores(listaJugadores);
         }
         
-        public System.Threading.Tasks.Task<int> cantidadJugadoresAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores) {
+        public System.Threading.Tasks.Task<int> cantidadJugadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.cantidadJugadoresAsync(listaJugadores);
         }
         
-        public int cantidadCartonesPorJugador(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador) {
+        public int cantidadCartonesPorJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador) {
             return base.Channel.cantidadCartonesPorJugador(listaJugadores, numeroJugador);
         }
         
-        public System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(WCF_Bingo.Clases.clsJugador[] listaJugadores, int numeroJugador) {
+        public System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador) {
             return base.Channel.cantidadCartonesPorJugadorAsync(listaJugadores, numeroJugador);
         }
-
-        //internal int crearJugador(List<clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //internal int actualizarEstados(List<clsJugador> listaJugadores, int numeroAleatorio)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
