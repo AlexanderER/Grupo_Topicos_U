@@ -63,48 +63,7 @@ namespace WCF_Bingo
             listaJugadores.Add(jugador);
             return listaJugadores;
         }
-        #endregion
-
-        #region Jugador
-
-        //public clsJugador getJugador(string p_sNombreUsuario, int p_iCantidadCartones, List<clsCarton> p_ListaCartones)
-        //{
-        //    clsJugador miJugador = new clsJugador();
-
-        //    miJugador.sNombreUsuario = p_sNombreUsuario;
-        //    miJugador.iCantidadCartones = p_iCantidadCartones;
-        //    miJugador.listaCartones = p_ListaCartones;
-
-        //    return miJugador;
-        //}
-
-
-        //public bool YaExisteElJugador(string p_sNombreJugador, List<clsJugador> p_ListaJugadores)
-        //{
-        //    Boolean bExiste = false;
-
-        //    if (p_ListaJugadores != null)   // Si es diferente de nulo
-        //    {
-        //        if (p_ListaJugadores.Count >= 1)    // Si tiene elementos
-        //        {
-        //            foreach (clsJugador clsJugTemp in p_ListaJugadores)  // Obtengo cada elemento de la Lista de Jugadores
-        //            {
-        //                String sTempNombreJugador = clsJugTemp.sNombreUsuario;  // Obtengo el nombre del Jugador
-
-        //                if (sTempNombreJugador == p_sNombreJugador) // Valido que no sean iguales
-        //                {
-        //                    bExiste = true;
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    return bExiste;
-        //}
-
-        #endregion
-
-
+        #endregion 
 
         #region Generacion de Numero Aleatorio
 
@@ -266,6 +225,16 @@ namespace WCF_Bingo
             }
             return 0;
         }
+        #endregion
+
+        #region ordenar lista
+
+        public List<int> ordenarNumeros(List<int> lista)
+        {
+            lista.Sort();
+            return lista;
+        }
+
         #endregion
 
     }
