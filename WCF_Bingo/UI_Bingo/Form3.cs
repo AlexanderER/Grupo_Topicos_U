@@ -129,6 +129,7 @@ namespace UI_Bingo
 
 
         #region Metodos
+
         private String obtenerLetraNumeroFavorecido(Int32 p_sInumero)
         {
             String sLetra = "";
@@ -174,6 +175,7 @@ namespace UI_Bingo
 
             return sLetra;
         }
+
 
         private void RefrescarDataGridNumFavorecidos()
         {
@@ -322,6 +324,11 @@ namespace UI_Bingo
 
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
