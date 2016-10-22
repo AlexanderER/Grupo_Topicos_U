@@ -213,45 +213,6 @@ namespace UI_Bingo
             dataGrid.Columns[nombreBD].ReadOnly = false;
         }
 
-        
-        
-        //agregar nuevo metodo   mostrarLista Commit
-
-        private void mostrarLista2(String nombreBD, String nombreMostrar, Int32 tamanio, DataGridView dataGrid, Boolean visible = true, Boolean bAlignmentRight = false, Boolean bAlignmentCenter = false)
-        {
-            DataGridViewTextBoxColumn Columna = new DataGridViewTextBoxColumn();
-            Columna.DataPropertyName = nombreBD;
-            Columna.Name = nombreBD;
-            Columna.HeaderText = nombreMostrar;
-
-            dataGrid.Columns.Add(Columna);
-            dataGrid.Columns[nombreBD].Width = tamanio;
-            dataGrid.Columns[nombreBD].Visible = visible;
-
-            if (bAlignmentRight)
-            {
-                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            }
-            if (bAlignmentCenter)
-            {
-                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            }
-
-            Columna.ReadOnly = false;
-            dataGrid.Columns[nombreBD].ReadOnly = false;
-        }
-
-        // finaliza de forma modifcada
-
-
-
-
-
-
-
         #endregion
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
