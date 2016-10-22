@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvResultados = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvJugadores = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.btnJugar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumerosFavorecidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,7 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvResultados);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dgvJugadores);
             this.panel1.Controls.Add(this.label2);
@@ -65,15 +65,15 @@
             this.panel1.Size = new System.Drawing.Size(626, 458);
             this.panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvResultados
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(364, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 158);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvResultados.AllowUserToAddRows = false;
+            this.dgvResultados.AllowUserToDeleteRows = false;
+            this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultados.Location = new System.Drawing.Point(364, 67);
+            this.dgvResultados.Name = "dgvResultados";
+            this.dgvResultados.Size = new System.Drawing.Size(240, 158);
+            this.dgvResultados.TabIndex = 11;
             // 
             // label3
             // 
@@ -184,7 +184,7 @@
             this.Text = "Bingo!!";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumerosFavorecidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -203,7 +203,7 @@
         private System.Windows.Forms.DataGridView dgvNumerosFavorecidos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvJugadores;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvResultados;
         private System.Windows.Forms.Label label3;
     }
 }
