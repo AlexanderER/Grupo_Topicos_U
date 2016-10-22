@@ -42,7 +42,7 @@ namespace UI_Bingo
 
                 if (clsGlobal.ListaNumerosFavorecidos.Count == clsGlobal.iLimiteNumerosBingo)
                 {
-                    MessageBox.Show("Ya no quedan numero por jugar.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ya no quedan números por jugar.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -76,6 +76,19 @@ namespace UI_Bingo
                     // Aqui hacer el llamado para hacer     //
                     // las validaciones en los cartones     //
                     //////////////////////////////////////////
+
+                    // Paso 1.  Actualizo el estado de los cartones
+
+
+
+                    // Paso 2.  Obtengo los cartones que contienen el numero
+
+
+
+                    // Paso 3.  Validar dentro de los Afortunados si era el ultimo numero que ocupaba
+
+
+
 
                 }
 
