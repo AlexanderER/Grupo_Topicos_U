@@ -17,21 +17,7 @@ namespace UI_Bingo
         public Form2()
         {
             InitializeComponent();
-            //Console.WriteLine("Hola");
-            //cmbTiposJuego.Items.Add("Cartón lleno");
-            //cmbTiposJuego.Items.Add("Cuatro esquinas");
-            //cmbTiposJuego.Items.Add("Letra H");
-            //cmbTiposJuego.Items.Add("Letra X");
-            //
-            //
-            //Letra O
-            //Letra U
-            //Letra P
-            //Letra A
-            //Letra E
-            //Letra W
-            //Letra R
-            //")
+          
 
         }
 
@@ -55,10 +41,10 @@ namespace UI_Bingo
         {
             if (txtNumeroJugadores.Text.Equals("")) { txtNumeroJugadores.Text = "0";}
             this.cmbNumeroJugadores.Items.Clear();
-            Console.WriteLine("Dentro del IF");
+           
             for (int i = 0; i < int.Parse(txtNumeroJugadores.Text); i++)
             {
-                Console.WriteLine("Dentro del for");
+               
                 this.cmbNumeroJugadores.Items.Add(i + 1);
             }
         }
