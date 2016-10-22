@@ -183,6 +183,7 @@ namespace WCF_Bingo
                             if (numeroAleatorio == listaJugadores[i].ListaCartones[p].Columnas[m][n].Numero) {
                                 //NumeroAReducirParaGanar = NumeroAReducirParaGanar - 1
                                 listaJugadores[i].ListaCartones[p].NumeroAReducirParaGanar = listaJugadores[i].ListaCartones[p].NumeroAReducirParaGanar - 1;
+                                listaJugadores[i].ListaCartones[p].Columnas[m][n].Numerojugado = true;
                             }
                         }
                     }
