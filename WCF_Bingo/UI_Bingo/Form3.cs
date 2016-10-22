@@ -244,7 +244,7 @@ namespace UI_Bingo
 
             // Agrego Columnas
             this.crearColumnaGrid("NUMERO", "Número", 60, this.dgvNumerosFavorecidos);
-            this.crearColumnaGrid("Numero", "Numero Ordenado", 60, this.dgvNumerosFavorecidos;)
+            this.crearColumnaGrid("Numero", "Numero Ordenado", 60, this.dgvNumerosFavorecidos);
 
             // Agregar Valores
             if (clsGlobal.ListaNumerosFavorecidos != null)   // Si es diferente de nulo
