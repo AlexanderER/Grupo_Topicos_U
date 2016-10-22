@@ -21,7 +21,7 @@ namespace UI_Bingo
         public static List<Int32> ListaNumerosFavorecidos = new List<Int32>();
 
         //  Lista de Jugadores
-        public static List<Clases.clsJugador> ListaJugador = new List<Clases.clsJugador>();
+        public static List<WCF_Bingo.Clases.clsJugador> ListaJugador = new List<WCF_Bingo.Clases.clsJugador>();
 
         #endregion
 
