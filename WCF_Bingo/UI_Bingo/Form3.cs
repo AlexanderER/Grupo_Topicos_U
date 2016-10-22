@@ -72,6 +72,7 @@ namespace UI_Bingo
 
 
 
+                    this.verCartonesconNumero(clsGlobal.ListaJugador, iNumeroObtenido);
 
                     //----------------------------------------------------------------------------------------   Hacer Validaciones en Cartones
                     //////////////////////////////////////////
@@ -318,6 +319,57 @@ namespace UI_Bingo
         }
 
         #endregion
+
+
+
+
+        private void verCartonesconNumero(List<WCF_Bingo.Clases.clsJugador> listaJugadores, Int32 iNumero)
+        {
+            foreach (WCF_Bingo.Clases.clsJugador miJugador in listaJugadores)
+            {
+                foreach (WCF_Bingo.Clases.clsCarton miCarton in miJugador.ListaCartones)
+                {
+                    int iNumCarton = 1;
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        List<WCF_Bingo.Clases.clsCelda> miColumna;
+                        miColumna = miCarton.Columnas[i];
+
+                        if (miColumna[0].Numero == iNumero)
+                        {
+                            // Agrego Jugador
+                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+                        }
+
+                        if (miColumna[1].Numero == iNumero)
+                        {
+                            // Agrego Jugador
+                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+                        }
+
+                        if (miColumna[2].Numero == iNumero)
+                        {
+                            // Agrego Jugador
+                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+                        }
+
+                        if (miColumna[4].Numero == iNumero)
+                        {
+                            // Agrego Jugador
+                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+                        }
+                    }
+                    iNumCarton++;
+                }
+            }
+
+
+        }
+
+
+
+
 
 
 
