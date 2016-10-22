@@ -149,5 +149,10 @@ namespace Prueba.ServiceReference1 {
         {
             throw new NotImplementedException();
         }
+
+        internal int actualizarEstados(List<clsJugador> listaJugadores, int numeroAleatorio)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
