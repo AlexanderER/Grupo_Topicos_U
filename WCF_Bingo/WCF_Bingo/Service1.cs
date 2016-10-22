@@ -259,18 +259,5 @@ namespace WCF_Bingo
         }
         #endregion
 
-        #region consultar cantidad cartones de jugador
-        public int cantidadCartonesPorJugador2(List<clsJugador> listaJugadores, int numeroJugador)
-        {
-            for (int i = 0; i < listaJugadores.Count; i++)
-            {
-                if (listaJugadores[i].NombreJugador == numeroJugador)
-                {
-                    return listaJugadores[i].ListaCartones.Count;
-                }
-            }
-            return 0;
-        }
-        #endregion
     }
 }
