@@ -9,208 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace UI_Bingo.miServicio {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clsJugador", Namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases")]
-    [System.SerializableAttribute()]
-    public partial class clsJugador : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<UI_Bingo.miServicio.clsCarton> ListaCartonesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NombreJugadorField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<UI_Bingo.miServicio.clsCarton> ListaCartones {
-            get {
-                return this.ListaCartonesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ListaCartonesField, value) != true)) {
-                    this.ListaCartonesField = value;
-                    this.RaisePropertyChanged("ListaCartones");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NombreJugador {
-            get {
-                return this.NombreJugadorField;
-            }
-            set {
-                if ((this.NombreJugadorField.Equals(value) != true)) {
-                    this.NombreJugadorField = value;
-                    this.RaisePropertyChanged("NombreJugador");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clsCarton", Namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases")]
-    [System.SerializableAttribute()]
-    public partial class clsCarton : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CantidadNumerosAJugarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<System.Collections.Generic.List<UI_Bingo.miServicio.clsCelda>> ColumnasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NumeroAReducirParaGanarField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CantidadNumerosAJugar {
-            get {
-                return this.CantidadNumerosAJugarField;
-            }
-            set {
-                if ((this.CantidadNumerosAJugarField.Equals(value) != true)) {
-                    this.CantidadNumerosAJugarField = value;
-                    this.RaisePropertyChanged("CantidadNumerosAJugar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<System.Collections.Generic.List<UI_Bingo.miServicio.clsCelda>> Columnas {
-            get {
-                return this.ColumnasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ColumnasField, value) != true)) {
-                    this.ColumnasField = value;
-                    this.RaisePropertyChanged("Columnas");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NumeroAReducirParaGanar {
-            get {
-                return this.NumeroAReducirParaGanarField;
-            }
-            set {
-                if ((this.NumeroAReducirParaGanarField.Equals(value) != true)) {
-                    this.NumeroAReducirParaGanarField = value;
-                    this.RaisePropertyChanged("NumeroAReducirParaGanar");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clsCelda", Namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases")]
-    [System.SerializableAttribute()]
-    public partial class clsCelda : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AJugarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NumeroField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool AJugar {
-            get {
-                return this.AJugarField;
-            }
-            set {
-                if ((this.AJugarField.Equals(value) != true)) {
-                    this.AJugarField = value;
-                    this.RaisePropertyChanged("AJugar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Numero {
-            get {
-                return this.NumeroField;
-            }
-            set {
-                if ((this.NumeroField.Equals(value) != true)) {
-                    this.NumeroField = value;
-                    this.RaisePropertyChanged("Numero");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="miServicio.IService1")]
@@ -223,40 +22,40 @@ namespace UI_Bingo.miServicio {
         System.Threading.Tasks.Task<int> GenerarNumeroAsync(int p_iNumeroTecho, System.Collections.Generic.List<int> p_lista);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/crearJugador", ReplyAction="http://tempuri.org/IService1/crearJugadorResponse")]
-        System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> crearJugador(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
+        System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> crearJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/crearJugador", ReplyAction="http://tempuri.org/IService1/crearJugadorResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador>> crearJugadorAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> crearJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/actualizarEstados", ReplyAction="http://tempuri.org/IService1/actualizarEstadosResponse")]
-        System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> actualizarEstados(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroAleatorio);
+        System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> actualizarEstados(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/actualizarEstados", ReplyAction="http://tempuri.org/IService1/actualizarEstadosResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador>> actualizarEstadosAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroAleatorio);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> actualizarEstadosAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/jugadoresGanadores", ReplyAction="http://tempuri.org/IService1/jugadoresGanadoresResponse")]
-        System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> jugadoresGanadores(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores);
+        System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> jugadoresGanadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/jugadoresGanadores", ReplyAction="http://tempuri.org/IService1/jugadoresGanadoresResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador>> jugadoresGanadoresAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> jugadoresGanadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/consultarCarton", ReplyAction="http://tempuri.org/IService1/consultarCartonResponse")]
-        UI_Bingo.miServicio.clsCarton consultarCarton(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador, int indiceCarton);
+        WCF_Bingo.Clases.clsCarton consultarCarton(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/consultarCarton", ReplyAction="http://tempuri.org/IService1/consultarCartonResponse")]
-        System.Threading.Tasks.Task<UI_Bingo.miServicio.clsCarton> consultarCartonAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador, int indiceCarton);
+        System.Threading.Tasks.Task<WCF_Bingo.Clases.clsCarton> consultarCartonAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadJugadores", ReplyAction="http://tempuri.org/IService1/cantidadJugadoresResponse")]
-        int cantidadJugadores(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores);
+        int cantidadJugadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadJugadores", ReplyAction="http://tempuri.org/IService1/cantidadJugadoresResponse")]
-        System.Threading.Tasks.Task<int> cantidadJugadoresAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores);
+        System.Threading.Tasks.Task<int> cantidadJugadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadCartonesPorJugador", ReplyAction="http://tempuri.org/IService1/cantidadCartonesPorJugadorResponse")]
-        int cantidadCartonesPorJugador(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador);
+        int cantidadCartonesPorJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/cantidadCartonesPorJugador", ReplyAction="http://tempuri.org/IService1/cantidadCartonesPorJugadorResponse")]
-        System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador);
+        System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -294,51 +93,51 @@ namespace UI_Bingo.miServicio {
             return base.Channel.GenerarNumeroAsync(p_iNumeroTecho, p_lista);
         }
         
-        public System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> crearJugador(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
+        public System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> crearJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
             return base.Channel.crearJugador(listaJugadores, nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador>> crearJugadorAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> crearJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad) {
             return base.Channel.crearJugadorAsync(listaJugadores, nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
         }
         
-        public System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> actualizarEstados(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroAleatorio) {
+        public System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> actualizarEstados(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio) {
             return base.Channel.actualizarEstados(listaJugadores, numeroAleatorio);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador>> actualizarEstadosAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroAleatorio) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> actualizarEstadosAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroAleatorio) {
             return base.Channel.actualizarEstadosAsync(listaJugadores, numeroAleatorio);
         }
         
-        public System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> jugadoresGanadores(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores) {
+        public System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> jugadoresGanadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.jugadoresGanadores(listaJugadores);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador>> jugadoresGanadoresAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador>> jugadoresGanadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.jugadoresGanadoresAsync(listaJugadores);
         }
         
-        public UI_Bingo.miServicio.clsCarton consultarCarton(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador, int indiceCarton) {
+        public WCF_Bingo.Clases.clsCarton consultarCarton(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton) {
             return base.Channel.consultarCarton(listaJugadores, numeroJugador, indiceCarton);
         }
         
-        public System.Threading.Tasks.Task<UI_Bingo.miServicio.clsCarton> consultarCartonAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador, int indiceCarton) {
+        public System.Threading.Tasks.Task<WCF_Bingo.Clases.clsCarton> consultarCartonAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador, int indiceCarton) {
             return base.Channel.consultarCartonAsync(listaJugadores, numeroJugador, indiceCarton);
         }
         
-        public int cantidadJugadores(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores) {
+        public int cantidadJugadores(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.cantidadJugadores(listaJugadores);
         }
         
-        public System.Threading.Tasks.Task<int> cantidadJugadoresAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores) {
+        public System.Threading.Tasks.Task<int> cantidadJugadoresAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores) {
             return base.Channel.cantidadJugadoresAsync(listaJugadores);
         }
         
-        public int cantidadCartonesPorJugador(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador) {
+        public int cantidadCartonesPorJugador(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador) {
             return base.Channel.cantidadCartonesPorJugador(listaJugadores, numeroJugador);
         }
         
-        public System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(System.Collections.Generic.List<UI_Bingo.miServicio.clsJugador> listaJugadores, int numeroJugador) {
+        public System.Threading.Tasks.Task<int> cantidadCartonesPorJugadorAsync(System.Collections.Generic.List<WCF_Bingo.Clases.clsJugador> listaJugadores, int numeroJugador) {
             return base.Channel.cantidadCartonesPorJugadorAsync(listaJugadores, numeroJugador);
         }
     }
