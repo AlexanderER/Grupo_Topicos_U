@@ -15,6 +15,14 @@ namespace UI_Bingo
         public Form4()
         {
             InitializeComponent();
+            // Instancio el WCF y ejecuto el proceso de obtener numero
+            miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+      
+            for (int i = 0; i < WCF_Service.cantidadJugadores(clsGlobal.ListaJugador); i++)
+            {
+
+                this.cmbNumJugador.Items.Add(i + 1);
+            }
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -25,6 +33,31 @@ namespace UI_Bingo
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void cmbNumJugador_Leave(object sender, EventArgs e)
+        {
+            this.cmbNumCarton.Items.Clear();
+            miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+
+            for (int i = 0; i < WCF_Service.cantidadCartonesPorJugador(clsGlobal.ListaJugador, Convert.ToInt32(this.cmbNumJugador.Text)); i++)
+            {
+
+                this.cmbNumCarton.Items.Add(i + 1);
+            }
+        }
+
+        private void cmbNumJugador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.cmbNumCarton.Items.Clear();
+            //miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+
+            //for (int i = 0; i < WCF_Service.cantidadCartonesPorJugador(clsGlobal.ListaJugador, Convert.ToInt32(this.cmbNumJugador.Text)); i++)
+            //{
+
+            //    this.cmbNumCarton.Items.Add(i + 1);
+            //}
         }
     }
 }

@@ -37,23 +37,25 @@ namespace UI_Bingo
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
+            List<WCF_Bingo.Clases.clsJugador> ListaJugadorTemporal = clsGlobal.ListaJugador; // En caso de error o excepcion se recupera el ultimo listado
+
             try
             {
 
                 if (clsGlobal.ListaNumerosFavorecidos.Count == clsGlobal.iLimiteNumerosBingo)
                 {
-                    MessageBox.Show("Ya no quedan numero por jugar.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ya no quedan números por jugar.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     //----------------------------------------------------------------------------------------   Obtengo el Numero 
                     // Traslado la lista a un arreglo ya que el metodo solicita un arreglo
-                    Int32[] arrayDeNumeros = new Int32[clsGlobal.ListaNumerosFavorecidos.Count];
-                    clsGlobal.ListaNumerosFavorecidos.CopyTo(arrayDeNumeros);
+                    //Int32[] arrayDeNumeros = new Int32[clsGlobal.ListaNumerosFavorecidos.Count];
+                    //clsGlobal.ListaNumerosFavorecidos.CopyTo(arrayDeNumeros);
 
                     // Instancio el WCF y ejecuto el proceso de obtener numero
                     miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
-                    Int32 iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, arrayDeNumeros);
+                    Int32 iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, clsGlobal.ListaNumerosFavorecidos);
 
                     // Agrego el numero a la Lista de Numero Favorecidos
                     clsGlobal.ListaNumerosFavorecidos.Add(iNumeroObtenido);
@@ -77,20 +79,47 @@ namespace UI_Bingo
                     // las validaciones en los cartones     //
                     //////////////////////////////////////////
 
+                    // Paso 1.  Actualizo el estado de los cartones
+                    clsGlobal.ListaJugador = WCF_Service.actualizarEstados(clsGlobal.ListaJugador, iNumeroObtenido);
+
+                    // Paso 2.  Obtengo los cartones que contienen el numero
+                    List<WCF_Bingo.Clases.clsJugador> Lganadores = WCF_Service.jugadoresGanadores(clsGlobal.ListaJugador);
+
+                    if (Lganadores.Count > 0)
+                    {
+                        MessageBox.Show("//////////////////////////////////////////////////////" + Environment.NewLine +
+                                        "//                                                                                   //" + Environment.NewLine +
+                                        "//   *** *** ***   HAY GANADORES    *** *** ***       //" + Environment.NewLine +
+                                        "//                                                                                  //" + Environment.NewLine +
+                                        "////////////////////////////////////////////////////",
+                                        "Carton Ganador", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        RefrescarDataGridGanadores(Lganadores);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aún no hay ganadores.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+
+                    // Paso 3.  Validar dentro de los Afortunados si era el ultimo numero que ocupaba
+
+
+
+
                 }
 
             }
             catch (Exception ex) {
+
+                clsGlobal.ListaJugador = ListaJugadorTemporal;
 
                 String mensaje;
                 String titulo;
                 mensaje = "No se logró obtener el número de forma correcta";
                 titulo = "Atención";
 
-
                 MessageBox.Show(mensaje,titulo,MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                
+            
             }
 
             
@@ -100,6 +129,7 @@ namespace UI_Bingo
 
 
         #region Metodos
+
         private String obtenerLetraNumeroFavorecido(Int32 p_sInumero)
         {
             String sLetra = "";
@@ -145,6 +175,7 @@ namespace UI_Bingo
 
             return sLetra;
         }
+
 
         private void RefrescarDataGridNumFavorecidos()
         {
@@ -213,6 +244,78 @@ namespace UI_Bingo
             dataGrid.Columns[nombreBD].ReadOnly = false;
         }
 
+        #endregion
+
+
+        #region Pintar Jugadores
+
+        private void RefrescarDataGridGanadores(List<WCF_Bingo.Clases.clsJugador> p_lista)
+        {
+            // Aplico Formato
+            this.dgvJugadores.Columns.Clear();
+            this.aplicarFormatoDataGridGanadores(this.dgvJugadores);
+
+            // Agrego Columnas
+            this.crearColumnaGrid("NOMBRE", "Nombre #", 110, this.dgvJugadores);
+            this.crearColumnaGrid("CANT_CARTONES", "Cantidad de Cartones", 110, this.dgvJugadores);
+
+            // Agregar Valores
+            if (p_lista != null)   // Si es diferente de nulo
+            {
+                if (p_lista.Count >= 1)    // Si tiene elementos
+                {
+                    foreach (WCF_Bingo.Clases.clsJugador clsJugTemp in p_lista)  // Obtengo cada elemento de la Lista de Jugadores
+                    {
+                        String sTempNombreJugador = clsJugTemp.NombreJugador.ToString();  // Obtengo el nombre del Jugador
+                        string[] row = { sTempNombreJugador, clsJugTemp.ListaCartones.Count.ToString() };
+                        this.dgvJugadores.Rows.Add(row);
+                    }
+                }
+            }
+
+            this.dgvJugadores.CurrentCell = null;
+        }
+
+        private void aplicarFormatoDataGridGanadores(DataGridView dgView, Boolean bReadOnly = true)
+        {
+            dgView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgView.ScrollBars = ScrollBars.Both;
+            dgView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgView.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromKnownColor(System.Drawing.KnownColor.DarkSeaGreen);
+            dgView.AllowUserToResizeRows = false;
+            dgView.MultiSelect = false;
+            dgView.ReadOnly = bReadOnly;
+            dgView.RowHeadersVisible = false;
+        }
+
+        private void crearColumnaGridGanadores(String nombreBD, String nombreMostrar, Int32 tamanio, DataGridView dataGrid, Boolean visible = true, Boolean bAlignmentRight = false, Boolean bAlignmentCenter = false)
+        {
+            DataGridViewTextBoxColumn Columna = new DataGridViewTextBoxColumn();
+            Columna.DataPropertyName = nombreBD;
+            Columna.Name = nombreBD;
+            Columna.HeaderText = nombreMostrar;
+
+            dataGrid.Columns.Add(Columna);
+            dataGrid.Columns[nombreBD].Width = tamanio;
+            dataGrid.Columns[nombreBD].Visible = visible;
+
+            if (bAlignmentRight)
+            {
+                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+            if (bAlignmentCenter)
+            {
+                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            }
+
+            Columna.ReadOnly = false;
+            dataGrid.Columns[nombreBD].ReadOnly = false;
+        }
 
         #endregion
 
@@ -220,10 +323,14 @@ namespace UI_Bingo
 
 
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-
+        }
     }
 }

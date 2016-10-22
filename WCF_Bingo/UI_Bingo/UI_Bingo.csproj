@@ -67,10 +67,10 @@
     <Compile Include="Clases\clsCelda.cs" />
     <Compile Include="Clases\clsJugador.cs" />
     <Compile Include="clsGlobal.cs" />
-    <Compile Include="Resources\Form1.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\Form1.Designer.cs">
+    <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
@@ -98,7 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Resources\Form1.resx">
+    <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
@@ -115,6 +115,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\WCF_Bingo.Clases.clsCarton.datasource" />
+    <None Include="Properties\DataSources\WCF_Bingo.Clases.clsJugador.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,12 +140,6 @@
     </None>
     <None Include="Service References\miServicio\service1.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\miServicio\UI_Bingo.miServicio.clsCarton.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\miServicio\UI_Bingo.miServicio.clsJugador.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\miServicio\WCF_Bingo.Clases.xsd">
       <SubType>Designer</SubType>

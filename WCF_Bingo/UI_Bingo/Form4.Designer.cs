@@ -56,8 +56,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbNumCarton = new System.Windows.Forms.ComboBox();
+            this.cmbNumJugador = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -93,8 +93,8 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbNumCarton);
+            this.panel1.Controls.Add(this.cmbNumJugador);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
@@ -339,21 +339,23 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Número de Jugador";
             // 
-            // comboBox2
+            // cmbNumCarton
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(219, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 3;
+            this.cmbNumCarton.FormattingEnabled = true;
+            this.cmbNumCarton.Location = new System.Drawing.Point(219, 71);
+            this.cmbNumCarton.Name = "cmbNumCarton";
+            this.cmbNumCarton.Size = new System.Drawing.Size(121, 21);
+            this.cmbNumCarton.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbNumJugador
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(219, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cmbNumJugador.FormattingEnabled = true;
+            this.cmbNumJugador.Location = new System.Drawing.Point(219, 23);
+            this.cmbNumJugador.Name = "cmbNumJugador";
+            this.cmbNumJugador.Size = new System.Drawing.Size(121, 21);
+            this.cmbNumJugador.TabIndex = 2;
+            this.cmbNumJugador.SelectedIndexChanged += new System.EventHandler(this.cmbNumJugador_SelectedIndexChanged);
+            this.cmbNumJugador.Leave += new System.EventHandler(this.cmbNumJugador_Leave);
             // 
             // button1
             // 
@@ -400,8 +402,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbNumCarton;
+        private System.Windows.Forms.ComboBox cmbNumJugador;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;

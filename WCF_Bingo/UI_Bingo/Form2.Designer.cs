@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,8 +49,10 @@
             this.txtNumMax = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgvJugadores = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,7 +64,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.dgvJugadores);
+            this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
@@ -82,25 +85,25 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(493, 418);
+            this.panel2.Size = new System.Drawing.Size(493, 438);
             this.panel2.TabIndex = 6;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button3
+            // btnAdd
             // 
-            this.button3.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(383, 281);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Agregar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnAdd.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(383, 231);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 27;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button3_Click);
             // 
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(18, 330);
+            this.label9.Location = new System.Drawing.Point(18, 369);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(463, 2);
             this.label9.TabIndex = 26;
@@ -108,7 +111,7 @@
             // label8
             // 
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Location = new System.Drawing.Point(18, 198);
+            this.label8.Location = new System.Drawing.Point(18, 175);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(463, 2);
             this.label8.TabIndex = 25;
@@ -127,7 +130,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(227, 262);
+            this.label4.Location = new System.Drawing.Point(227, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 16);
             this.label4.TabIndex = 16;
@@ -156,7 +159,7 @@
             // cmbNumeroJugadores
             // 
             this.cmbNumeroJugadores.FormattingEnabled = true;
-            this.cmbNumeroJugadores.Location = new System.Drawing.Point(70, 281);
+            this.cmbNumeroJugadores.Location = new System.Drawing.Point(70, 231);
             this.cmbNumeroJugadores.Name = "cmbNumeroJugadores";
             this.cmbNumeroJugadores.Size = new System.Drawing.Size(91, 21);
             this.cmbNumeroJugadores.TabIndex = 17;
@@ -173,7 +176,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 234);
+            this.label2.Location = new System.Drawing.Point(48, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(397, 14);
             this.label2.TabIndex = 19;
@@ -201,7 +204,7 @@
             // 
             // txtNumeroCartones
             // 
-            this.txtNumeroCartones.Location = new System.Drawing.Point(284, 282);
+            this.txtNumeroCartones.Location = new System.Drawing.Point(284, 232);
             this.txtNumeroCartones.Name = "txtNumeroCartones";
             this.txtNumeroCartones.Size = new System.Drawing.Size(53, 20);
             this.txtNumeroCartones.TabIndex = 20;
@@ -230,7 +233,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(85, 262);
+            this.label3.Location = new System.Drawing.Point(85, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 15;
@@ -247,7 +250,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(287, 347);
+            this.button2.Location = new System.Drawing.Point(287, 380);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 58);
             this.button2.TabIndex = 18;
@@ -258,7 +261,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(32, 347);
+            this.button1.Location = new System.Drawing.Point(32, 380);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 58);
             this.button1.TabIndex = 17;
@@ -266,11 +269,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dgvJugadores
+            // 
+            this.dgvJugadores.AllowUserToAddRows = false;
+            this.dgvJugadores.AllowUserToDeleteRows = false;
+            this.dgvJugadores.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJugadores.Location = new System.Drawing.Point(51, 258);
+            this.dgvJugadores.Name = "dgvJugadores";
+            this.dgvJugadores.Size = new System.Drawing.Size(407, 108);
+            this.dgvJugadores.TabIndex = 28;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 421);
+            this.ClientSize = new System.Drawing.Size(496, 451);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -280,6 +294,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,6 +320,7 @@
         private System.Windows.Forms.TextBox txtNumMax;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dgvJugadores;
     }
 }
