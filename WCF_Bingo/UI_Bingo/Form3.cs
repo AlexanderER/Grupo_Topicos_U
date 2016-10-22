@@ -258,11 +258,11 @@ namespace UI_Bingo
 
                         this.dgvNumerosFavorecidos.Rows.Add(row);
                     }
-                    for (int i = 0; i <= clsGlobal.ListaNumerosFavorecidos.Count; i++)
-                    {
-                        clsGlobal.ListaNumerosFavorecidos.Sort();
+                    //for (int i = 0; i <= clsGlobal.ListaNumerosFavorecidos.Count; i++)
+                    //{
+                    //    clsGlobal.ListaNumerosFavorecidos.Sort();
 
-                    }
+                    //}
                 }
             }
 
