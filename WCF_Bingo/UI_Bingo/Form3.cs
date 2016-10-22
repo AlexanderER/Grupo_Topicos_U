@@ -29,6 +29,64 @@ namespace UI_Bingo
          }
 
 
+        #region Resultados
+        private void verCartonesconNumero(List<WCF_Bingo.Clases.clsJugador> listaJugadores, Int32 iNumero)
+        {
+            DataSet dsData = new DataSet();
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // Construyo el dataSet y la Tabla con las columnas
+            DataTable dtTablaDif = dsData.Tables.Add("dtFavo");                             // requeridas para mostrar el reporte con las 
+            dtTablaDif.Columns.Add("JUGADOR");                                               // diferencias en caso de que sea necesario
+            dtTablaDif.Columns.Add("CARTON");                                               //
+            //////////////////////////////////////////////////////////////////////////////////
+
+            //recorre jugadores
+            for (int i = 0; i < listaJugadores.Count; i++)
+            {
+                //recorre cartones
+                for (int p = 0; p < listaJugadores[i].ListaCartones.Count; p++)
+                {
+                    //recorre celdas
+                    for (int m = 0; m < 5; m++)
+                    {
+                        for (int n = 0; n < 5; n++)
+                        {
+                            if (iNumero == listaJugadores[i].ListaCartones[p].Columnas[m][n].Numero)
+                            {
+
+                                //////////////////////////////////////////////////////
+                                DataRow myRow = dsData.Tables[0].NewRow();          //
+                                myRow["JUGADOR"] = (i + 1).ToString();                //
+                                myRow["CARTON"] = (p + 1).ToString();                 //
+                                dsData.Tables[0].Rows.Add(myRow);                   //
+                                //////////////////////////////////////////////////////
+
+                                // MessageBox.Show("El Jugador " + (i + 1).ToString() + " carton " + (p + 1).ToString());
+                            }
+                        }
+                    }
+                }
+            }
+
+            this.mostrarFormatoDatagridSorteados(dsData);
+        }
+
+        private void mostrarFormatoDatagridSorteados(DataSet p_dsDatos)
+        {
+            this.dgvResultados.Columns.Clear();
+            this.aplicarFormatoDataGrid(this.dgvResultados);
+            this.crearColumnaGrid("JUGADOR", "Jugador", 65, this.dgvResultados);
+            this.crearColumnaGrid("CARTON", "Carton", 279, this.dgvResultados);
+
+            this.dgvResultados.DataSource = p_dsDatos;
+            this.dgvResultados.DataMember = p_dsDatos.Tables[0].TableName;
+        }
+
+
+
+
+        #endregion
 
 
 
@@ -323,49 +381,49 @@ namespace UI_Bingo
 
 
 
-        private void verCartonesconNumero(List<WCF_Bingo.Clases.clsJugador> listaJugadores, Int32 iNumero)
-        {
-            foreach (WCF_Bingo.Clases.clsJugador miJugador in listaJugadores)
-            {
-                foreach (WCF_Bingo.Clases.clsCarton miCarton in miJugador.ListaCartones)
-                {
-                    int iNumCarton = 1;
+        //private void verCartonesconNumero(List<WCF_Bingo.Clases.clsJugador> listaJugadores, Int32 iNumero)
+        //{
+        //    foreach (WCF_Bingo.Clases.clsJugador miJugador in listaJugadores)
+        //    {
+        //        foreach (WCF_Bingo.Clases.clsCarton miCarton in miJugador.ListaCartones)
+        //        {
+        //            int iNumCarton = 1;
 
-                    for (int i = 0; i < 5; i++)
-                    {
-                        List<WCF_Bingo.Clases.clsCelda> miColumna;
-                        miColumna = miCarton.Columnas[i];
+        //            for (int i = 0; i < 5; i++)
+        //            {
+        //                List<WCF_Bingo.Clases.clsCelda> miColumna;
+        //                miColumna = miCarton.Columnas[i];
 
-                        if (miColumna[0].Numero == iNumero)
-                        {
-                            // Agrego Jugador
-                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
-                        }
+        //                if (miColumna[0].Numero == iNumero)
+        //                {
+        //                    // Agrego Jugador
+        //                    MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+        //                }
 
-                        if (miColumna[1].Numero == iNumero)
-                        {
-                            // Agrego Jugador
-                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
-                        }
+        //                if (miColumna[1].Numero == iNumero)
+        //                {
+        //                    // Agrego Jugador
+        //                    MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+        //                }
 
-                        if (miColumna[2].Numero == iNumero)
-                        {
-                            // Agrego Jugador
-                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
-                        }
+        //                if (miColumna[2].Numero == iNumero)
+        //                {
+        //                    // Agrego Jugador
+        //                    MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+        //                }
 
-                        if (miColumna[4].Numero == iNumero)
-                        {
-                            // Agrego Jugador
-                            MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
-                        }
-                    }
-                    iNumCarton++;
-                }
-            }
+        //                if (miColumna[4].Numero == iNumero)
+        //                {
+        //                    // Agrego Jugador
+        //                    MessageBox.Show("Jugador " + miJugador.NombreJugador.ToString() + " tiene el numero en el Carton " + iNumCarton.ToString());
+        //                }
+        //            }
+        //            iNumCarton++;
+        //        }
+        //    }
 
 
-        }
+        //}
 
 
 
