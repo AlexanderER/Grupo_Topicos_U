@@ -88,10 +88,10 @@ namespace UI_Bingo
                     if (Lganadores.Count > 0)
                     {
                         MessageBox.Show("//////////////////////////////////////////////////////" + Environment.NewLine +
-                                        "//                                                  //" + Environment.NewLine +
-                                        "//   *** *** ***   HAY GANADORES    *** *** ***     //" + Environment.NewLine +
-                                        "//                                                  //" + Environment.NewLine +
-                                        "//////////////////////////////////////////////////////",
+                                        "//                                                                                   //" + Environment.NewLine +
+                                        "//   *** *** ***   HAY GANADORES    *** *** ***       //" + Environment.NewLine +
+                                        "//                                                                                  //" + Environment.NewLine +
+                                        "////////////////////////////////////////////////////",
                                         "Carton Ganador", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         RefrescarDataGridGanadores(Lganadores);
                     }
