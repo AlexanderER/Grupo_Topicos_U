@@ -237,7 +237,7 @@ namespace UI_Bingo
                 this.lbl43.ForeColor = System.Drawing.Color.White;
                 lbl43.Text = Convert.ToString(temp[3].Numero);
             }
-            l if (temp[4].AJugar == true) { lbl44.Text = Convert.ToString(temp[4].Numero); }
+            if (temp[4].AJugar == true) { lbl44.Text = Convert.ToString(temp[4].Numero); }
             else
             {
                 this.lbl44.BackColor = System.Drawing.Color.MidnightBlue;
