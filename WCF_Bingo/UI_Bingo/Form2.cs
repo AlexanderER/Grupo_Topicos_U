@@ -90,6 +90,10 @@ namespace UI_Bingo
                 txtNumMax.Enabled          = false;
                 cmbNumeroJugadores.Items.RemoveAt(cmbNumeroJugadores.SelectedIndex);
 
+                // Refresco el Grid
+
+                this.RefrescarDataGrid();
+
             }
             if (cmbNumeroJugadores.Items.Count == 0) {
                 cmbNumeroJugadores.Enabled = false; }
@@ -111,6 +115,85 @@ namespace UI_Bingo
 
             if (int.Parse(txtNumMax.Text) < 25) { MessageBox.Show("Digite unicamente números mayores a 24", "Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1); }
         }
+
+
+
+
+        #region Pintar Jugadores
+
+        private void RefrescarDataGrid()
+        {
+            // Aplico Formato
+            this.dgvJugadores.Columns.Clear();
+            this.aplicarFormatoDataGrid(this.dgvJugadores);
+
+            // Agrego Columnas
+            this.crearColumnaGrid("NOMBRE", "Nombre #", 200, this.dgvJugadores);
+            this.crearColumnaGrid("CANT_CARTONES", "Cantidad de Cartones", 187, this.dgvJugadores);
+
+            // Agregar Valores
+            if (clsGlobal.ListaJugador != null)   // Si es diferente de nulo
+            {
+                if (clsGlobal.ListaJugador.Count >= 1)    // Si tiene elementos
+                {
+                    foreach (WCF_Bingo.Clases.clsJugador clsJugTemp in clsGlobal.ListaJugador)  // Obtengo cada elemento de la Lista de Jugadores
+                    {
+                        String sTempNombreJugador = clsJugTemp.NombreJugador.ToString();  // Obtengo el nombre del Jugador
+                        string[] row = { sTempNombreJugador, clsJugTemp.ListaCartones.Count.ToString() };
+                        this.dgvJugadores.Rows.Add(row);
+                    }
+                }
+            }
+
+            this.dgvJugadores.CurrentCell = null;
+        }
+
+        private void aplicarFormatoDataGrid(DataGridView dgView, Boolean bReadOnly = true)
+        {
+            dgView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgView.ScrollBars = ScrollBars.Both;
+            dgView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgView.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromKnownColor(System.Drawing.KnownColor.DarkSeaGreen);
+            dgView.AllowUserToResizeRows = false;
+            dgView.MultiSelect = false;
+            dgView.ReadOnly = bReadOnly;
+            dgView.RowHeadersVisible = false;
+        }
+
+        private void crearColumnaGrid(String nombreBD, String nombreMostrar, Int32 tamanio, DataGridView dataGrid, Boolean visible = true, Boolean bAlignmentRight = false, Boolean bAlignmentCenter = false)
+        {
+            DataGridViewTextBoxColumn Columna = new DataGridViewTextBoxColumn();
+            Columna.DataPropertyName = nombreBD;
+            Columna.Name = nombreBD;
+            Columna.HeaderText = nombreMostrar;
+
+            dataGrid.Columns.Add(Columna);
+            dataGrid.Columns[nombreBD].Width = tamanio;
+            dataGrid.Columns[nombreBD].Visible = visible;
+
+            if (bAlignmentRight)
+            {
+                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+            if (bAlignmentCenter)
+            {
+                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            }
+
+            Columna.ReadOnly = false;
+            dataGrid.Columns[nombreBD].ReadOnly = false;
+        }
+
+        #endregion
+
+
+
+
     }
 
 
