@@ -21,13 +21,12 @@ namespace WCF_Bingo
             {
 
                 #region validar cartones repetidos
-
                 //Recorre Cada Jugador
                 for (int x = 0; x < listaJugadores.Count; x++)
                 {
                     bool similar = true;
                     //Recorre cada carton de jugador x
-                 //   if (listaJugadores[x].ListaCartones.)
+                    //   if (listaJugadores[x].ListaCartones.)
                     for (int i = 0; i < listaJugadores[x].ListaCartones.Count; i++)
                     {
                         //Recorre nuevo jugador
@@ -51,7 +50,7 @@ namespace WCF_Bingo
                             if (similar)
                             {
                                 jugador = new clsJugador(nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
-                                x = 0;
+                                x = -1;
                             }
                         }
                     }

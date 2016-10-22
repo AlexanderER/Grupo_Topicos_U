@@ -86,31 +86,35 @@ namespace WCF_Bingo.Clases
             //recorre cada carton
             for (int i = 0; i < listaCartones.Count; i++)
             {
-                bool similar = true;
+                bool similar = compararCartones(carton, ListaCartones[i]);
 
-                //recorre cada celda
-                for (int p = 0; p < 5; p++)
-                {
-                    for (int q = 0; q < 5; q++)
-                    {
-                        //ignorar 3,3 (numero del centro)
-                        if (!(q==3 && p==3))
-                        {
-                            //valida si encuentra una diferencia
-                            if (!(listaCartones[i].Columnas[p][q].Numero == carton.Columnas[p][q].Numero))
-                            {
-                                similar = false;
-                            }
-                        }
-                        
-                    }
-                }
                 if (similar) {
                     carton = new clsCarton(cantidadNumerosAJugar, modalidad);
-                    i = 0;
+                    i = -1;
                 }                
             }
             this.listaCartones.Add(carton);
+        }
+
+        public bool compararCartones(clsCarton carton1, clsCarton carton2)
+        {
+            for (int m = 0; m < 5; m++)
+            {
+                for (int n = 0; n < 5; n++)
+                {
+                    //ignorar 3,3 (numero del centro)
+                    if (!(m == 2 && n == 2))
+                    {
+                        //valida si encuentra una diferencia
+                        if (carton1.Columnas[m][n].AJugar != carton2.Columnas[m][n].AJugar)
+                        {
+                            return true;
+                        }
+                    }
+                    
+                }
+            }
+            return false;
         }
 
         #endregion
