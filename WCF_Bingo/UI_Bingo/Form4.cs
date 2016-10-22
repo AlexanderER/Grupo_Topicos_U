@@ -15,6 +15,15 @@ namespace UI_Bingo
         public Form4()
         {
             InitializeComponent();
+            // Instancio el WCF y ejecuto el proceso de obtener numero
+            miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+          //  Int32 iNumeroObtenido = WCF_Service.cantidadJugadores(clsGlobal.ListaJugador);
+
+            for (int i = 0; i < int.Parse(WCF_Service.cantidadJugadores(clsGlobal.ListaJugador)); i++)
+            {
+
+                this.cmbNumJugador.Items.Add(i + 1);
+            }
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -25,6 +34,11 @@ namespace UI_Bingo
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
