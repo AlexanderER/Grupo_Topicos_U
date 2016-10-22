@@ -145,14 +145,14 @@ namespace Prueba.ServiceReference1 {
             return base.Channel.cantidadCartonesPorJugadorAsync(listaJugadores, numeroJugador);
         }
 
-        internal int crearJugador(List<clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
-        {
-            throw new NotImplementedException();
-        }
+        //internal int crearJugador(List<clsJugador> listaJugadores, int nombreUsuario, int cantidadCartones, int cantidadNumerosAJugar, int modalidad)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        internal int actualizarEstados(List<clsJugador> listaJugadores, int numeroAleatorio)
-        {
-            throw new NotImplementedException();
-        }
+        //internal int actualizarEstados(List<clsJugador> listaJugadores, int numeroAleatorio)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

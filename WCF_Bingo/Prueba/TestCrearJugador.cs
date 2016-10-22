@@ -10,11 +10,13 @@ namespace Prueba
         [TestMethod]
         public void TestMethod1()
         {
-            //Int32 numeroTecho = 5;
+            
+            //Creo el objeto jugador     
+            WCF_Bingo.Clases.clsJugador jugador = new WCF_Bingo.Clases.clsJugador();
+            jugador.NombreJugador = 1;
+            jugador.ListaCartones = null;
 
-            //Int32[] lista = new Int32[] { 1, 2, 3 };
-
-            //Int32 numeroEsperado = 4;
+            //Creo lista
             List<WCF_Bingo.Clases.clsJugador> listaJugadores = new List<WCF_Bingo.Clases.clsJugador>();
 
             int nombreUsuario = new int();
@@ -22,6 +24,7 @@ namespace Prueba
             int cantidadNumerosAJugar = new int();
             int modalidad = new int();
 
+            listaJugadores.Add(jugador);
             nombreUsuario = 1;
             cantidadCartones = 1;
             cantidadNumerosAJugar = 50;
@@ -30,7 +33,7 @@ namespace Prueba
 
 
             ServiceReference1.Service1Client servicio = new ServiceReference1.Service1Client();
-            Int32 resultado = servicio.crearJugador(listaJugadores, nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
+            List<WCF_Bingo.Clases.clsJugador> resultado = servicio.crearJugador(listaJugadores, nombreUsuario, cantidadCartones, cantidadNumerosAJugar, modalidad);
 
             Assert.IsNotNull(resultado);
         }
