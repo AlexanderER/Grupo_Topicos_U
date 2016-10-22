@@ -37,6 +37,8 @@ namespace UI_Bingo
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
+            List<WCF_Bingo.Clases.clsJugador> ListaJugadorTemporal = clsGlobal.ListaJugador; // En caso de error o excepcion se recupera el ultimo listado
+
             try
             {
 
@@ -78,8 +80,7 @@ namespace UI_Bingo
                     //////////////////////////////////////////
 
                     // Paso 1.  Actualizo el estado de los cartones
-
-
+                    clsGlobal.ListaJugador = WCF_Service.actualizarEstados(clsGlobal.ListaJugador, iNumeroObtenido);
 
                     // Paso 2.  Obtengo los cartones que contienen el numero
 
@@ -95,15 +96,15 @@ namespace UI_Bingo
             }
             catch (Exception ex) {
 
+                clsGlobal.ListaJugador = ListaJugadorTemporal;
+
                 String mensaje;
                 String titulo;
                 mensaje = "No se logró obtener el número de forma correcta";
                 titulo = "Atención";
 
-
                 MessageBox.Show(mensaje,titulo,MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                
+            
             }
 
             
