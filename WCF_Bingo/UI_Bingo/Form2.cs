@@ -78,11 +78,22 @@ namespace UI_Bingo
                 txtNumeroCartones.Text = "";
                 txtNumMax.Enabled = false;
                 cmbNumeroJugadores.Items.RemoveAt(cmbNumeroJugadores.SelectedIndex);
+
+                miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+                //Clases.clsJugador jugador = new Clases.clsJugador();
+                //Clases.clsJugador[] arrayDeJugadores = new Clases.clsJugador[clsGlobal.ListaJugador.Count];
+                WCF_Bingo.Clases.clsJugador[] arrayDeJugadores = new WCF_Bingo.Clases.clsJugador[clsGlobal.ListaJugador.Count];
+                //clsGlobal.ListaJugador.CopyTo(arrayDeJugadores);
+                clsGlobal.ListaJugador.CopyTo(arrayDeJugadores);
+                clsGlobal.ListaJugador.Add(WCF_Service.crearJugador(arrayDeJugadores,this.cmbNumeroJugadores.SelectedIndex+1,Convert.ToInt32(this.txtNumeroCartones.Text),clsGlobal.iLimiteNumerosBingo,clsGlobal.iModalidadJuego);
+
+                //jugador = WCF_Service.crearJugador();
+               // iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, arrayDeNumeros);
             }
             if (cmbNumeroJugadores.Items.Count == 0) {
                 cmbNumeroJugadores.Enabled = false; }
 
-
+           
 
 
             //-------------------------------------------------------------------------------------------------

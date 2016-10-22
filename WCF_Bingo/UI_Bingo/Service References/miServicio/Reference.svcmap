@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="acaa4ec2-c423-4d27-a226-14d9fe8a8e31" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_Bingo/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="35169f29-7510-4e19-9007-362f79a5de06" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_Bingo/Service1/mex" />
     <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="b90fee9a-442e-4417-b71e-fc64fe4182ec" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_Bingo/Service1/mex" />
+    <MetadataFile FileName="WCF_Bingo.Clases.xsd" MetadataType="Schema" ID="973d8aa0-315e-4f09-9261-09f7573053da" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_Bingo/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

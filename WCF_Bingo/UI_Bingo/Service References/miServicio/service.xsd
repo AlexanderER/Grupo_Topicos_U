@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" />
   <xs:element name="GenerarNumero">
     <xs:complexType>
       <xs:sequence>
@@ -13,6 +14,98 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GenerarNumeroResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="crearJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="listaJugadores" nillable="true" type="q2:ArrayOfclsJugador" />
+        <xs:element minOccurs="0" name="nombreUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="cantidadCartones" type="xs:int" />
+        <xs:element minOccurs="0" name="cantidadNumerosAJugar" type="xs:int" />
+        <xs:element minOccurs="0" name="modalidad" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="crearJugadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="crearJugadorResult" nillable="true" type="q3:ArrayOfclsJugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarEstados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="listaJugadores" nillable="true" type="q4:ArrayOfclsJugador" />
+        <xs:element minOccurs="0" name="numeroAleatorio" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarEstadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="actualizarEstadosResult" nillable="true" type="q5:ArrayOfclsJugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jugadoresGanadores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="listaJugadores" nillable="true" type="q6:ArrayOfclsJugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jugadoresGanadoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="jugadoresGanadoresResult" nillable="true" type="q7:ArrayOfclsJugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="consultarCarton">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="listaJugadores" nillable="true" type="q8:ArrayOfclsJugador" />
+        <xs:element minOccurs="0" name="numeroJugador" type="xs:int" />
+        <xs:element minOccurs="0" name="indiceCarton" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="consultarCartonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="consultarCartonResult" nillable="true" type="q9:clsCarton" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cantidadJugadores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="listaJugadores" nillable="true" type="q10:ArrayOfclsJugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cantidadJugadoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cantidadJugadoresResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cantidadCartonesPorJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" minOccurs="0" name="listaJugadores" nillable="true" type="q11:ArrayOfclsJugador" />
+        <xs:element minOccurs="0" name="numeroJugador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cantidadCartonesPorJugadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cantidadCartonesPorJugadorResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

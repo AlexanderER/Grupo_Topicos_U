@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCF_Bingo.Clases" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GenerarNumero_InputMessage">
@@ -13,16 +14,130 @@
   <wsdl:message name="IService1_GenerarNumero_OutputMessage">
     <wsdl:part name="parameters" element="tns:GenerarNumeroResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_crearJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:crearJugador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_crearJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:crearJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_actualizarEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarEstados" />
+  </wsdl:message>
+  <wsdl:message name="IService1_actualizarEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_jugadoresGanadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:jugadoresGanadores" />
+  </wsdl:message>
+  <wsdl:message name="IService1_jugadoresGanadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:jugadoresGanadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_consultarCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarCarton" />
+  </wsdl:message>
+  <wsdl:message name="IService1_consultarCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_cantidadJugadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:cantidadJugadores" />
+  </wsdl:message>
+  <wsdl:message name="IService1_cantidadJugadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cantidadJugadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_cantidadCartonesPorJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:cantidadCartonesPorJugador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_cantidadCartonesPorJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cantidadCartonesPorJugadorResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GenerarNumero">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GenerarNumero" message="tns:IService1_GenerarNumero_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GenerarNumeroResponse" message="tns:IService1_GenerarNumero_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="crearJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/crearJugador" message="tns:IService1_crearJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/crearJugadorResponse" message="tns:IService1_crearJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/actualizarEstados" message="tns:IService1_actualizarEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/actualizarEstadosResponse" message="tns:IService1_actualizarEstados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="jugadoresGanadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/jugadoresGanadores" message="tns:IService1_jugadoresGanadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/jugadoresGanadoresResponse" message="tns:IService1_jugadoresGanadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/consultarCarton" message="tns:IService1_consultarCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/consultarCartonResponse" message="tns:IService1_consultarCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cantidadJugadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/cantidadJugadores" message="tns:IService1_cantidadJugadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/cantidadJugadoresResponse" message="tns:IService1_cantidadJugadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cantidadCartonesPorJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/cantidadCartonesPorJugador" message="tns:IService1_cantidadCartonesPorJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/cantidadCartonesPorJugadorResponse" message="tns:IService1_cantidadCartonesPorJugador_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GenerarNumero">
       <soap:operation soapAction="http://tempuri.org/IService1/GenerarNumero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearJugador">
+      <soap:operation soapAction="http://tempuri.org/IService1/crearJugador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarEstados">
+      <soap:operation soapAction="http://tempuri.org/IService1/actualizarEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="jugadoresGanadores">
+      <soap:operation soapAction="http://tempuri.org/IService1/jugadoresGanadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCarton">
+      <soap:operation soapAction="http://tempuri.org/IService1/consultarCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cantidadJugadores">
+      <soap:operation soapAction="http://tempuri.org/IService1/cantidadJugadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cantidadCartonesPorJugador">
+      <soap:operation soapAction="http://tempuri.org/IService1/cantidadCartonesPorJugador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

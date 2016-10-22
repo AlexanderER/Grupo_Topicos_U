@@ -139,6 +139,15 @@
     <None Include="Service References\miServicio\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\miServicio\UI_Bingo.miServicio.clsCarton.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\miServicio\UI_Bingo.miServicio.clsJugador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\miServicio\WCF_Bingo.Clases.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -184,6 +193,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WCF_Bingo\WCF_Bingo.csproj">
+      <Project>{dafb8a8c-0649-4f59-b635-f10994dee255}</Project>
+      <Name>WCF_Bingo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
