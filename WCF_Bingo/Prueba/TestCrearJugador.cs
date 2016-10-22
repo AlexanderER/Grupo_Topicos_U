@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Prueba
 {
     [TestClass]
-    public class UnitTest2
+    public class TestCrearJugador
     {
         [TestMethod]
         public void TestMethod1()
