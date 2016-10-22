@@ -101,6 +101,8 @@ namespace UI_Bingo
                 if (cmbNumeroJugadores.Items.Count == 0)
                 {
                     cmbNumeroJugadores.Enabled = false;
+                    txtNumeroCartones.Enabled = false;
+                    btnAdd.Enabled = false;
                 }
             }
             catch (Exception ex)
