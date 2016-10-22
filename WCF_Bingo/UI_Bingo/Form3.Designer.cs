@@ -110,10 +110,11 @@
             this.dgvNumerosFavorecidos.AllowUserToAddRows = false;
             this.dgvNumerosFavorecidos.AllowUserToDeleteRows = false;
             this.dgvNumerosFavorecidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNumerosFavorecidos.Location = new System.Drawing.Point(240, 67);
+            this.dgvNumerosFavorecidos.Location = new System.Drawing.Point(248, 67);
             this.dgvNumerosFavorecidos.Name = "dgvNumerosFavorecidos";
-            this.dgvNumerosFavorecidos.Size = new System.Drawing.Size(80, 359);
+            this.dgvNumerosFavorecidos.Size = new System.Drawing.Size(64, 359);
             this.dgvNumerosFavorecidos.TabIndex = 7;
+            this.dgvNumerosFavorecidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNumerosFavorecidos_CellContentClick);
             // 
             // pictureBox1
             // 
