@@ -37,17 +37,17 @@
             this.btnJugar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvJugadores = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumerosFavorecidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvJugadores);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dgvNumerosFavorecidos);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -137,13 +137,15 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Numeros";
             // 
-            // dataGridView1
+            // dgvJugadores
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(367, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 359);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvJugadores.AllowUserToAddRows = false;
+            this.dgvJugadores.AllowUserToDeleteRows = false;
+            this.dgvJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJugadores.Location = new System.Drawing.Point(367, 67);
+            this.dgvJugadores.Name = "dgvJugadores";
+            this.dgvJugadores.Size = new System.Drawing.Size(240, 359);
+            this.dgvJugadores.TabIndex = 9;
             // 
             // Form3
             // 
@@ -159,7 +161,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumerosFavorecidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,6 +176,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvNumerosFavorecidos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvJugadores;
     }
 }

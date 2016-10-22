@@ -83,7 +83,22 @@ namespace UI_Bingo
                     clsGlobal.ListaJugador = WCF_Service.actualizarEstados(clsGlobal.ListaJugador, iNumeroObtenido);
 
                     // Paso 2.  Obtengo los cartones que contienen el numero
+                    List<WCF_Bingo.Clases.clsJugador> Lganadores = WCF_Service.jugadoresGanadores(clsGlobal.ListaJugador);
 
+                    if (Lganadores.Count > 0)
+                    {
+                        MessageBox.Show("//////////////////////////////////////////////////////" + Environment.NewLine +
+                                        "//                                                  //" + Environment.NewLine +
+                                        "//   *** *** ***   HAY GANADORES    *** *** ***     //" + Environment.NewLine +
+                                        "//                                                  //" + Environment.NewLine +
+                                        "//////////////////////////////////////////////////////",
+                                        "Carton Ganador", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        RefrescarDataGridGanadores(Lganadores);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aún no hay ganadores.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
 
                     // Paso 3.  Validar dentro de los Afortunados si era el ultimo numero que ocupaba
@@ -228,6 +243,83 @@ namespace UI_Bingo
         }
 
         #endregion
+
+
+        #region Pintar Jugadores
+
+        private void RefrescarDataGridGanadores(List<WCF_Bingo.Clases.clsJugador> p_lista)
+        {
+            // Aplico Formato
+            this.dgvJugadores.Columns.Clear();
+            this.aplicarFormatoDataGridGanadores(this.dgvJugadores);
+
+            // Agrego Columnas
+            this.crearColumnaGrid("NOMBRE", "Nombre #", 110, this.dgvJugadores);
+            this.crearColumnaGrid("CANT_CARTONES", "Cantidad de Cartones", 110, this.dgvJugadores);
+
+            // Agregar Valores
+            if (p_lista != null)   // Si es diferente de nulo
+            {
+                if (p_lista.Count >= 1)    // Si tiene elementos
+                {
+                    foreach (WCF_Bingo.Clases.clsJugador clsJugTemp in p_lista)  // Obtengo cada elemento de la Lista de Jugadores
+                    {
+                        String sTempNombreJugador = clsJugTemp.NombreJugador.ToString();  // Obtengo el nombre del Jugador
+                        string[] row = { sTempNombreJugador, clsJugTemp.ListaCartones.Count.ToString() };
+                        this.dgvJugadores.Rows.Add(row);
+                    }
+                }
+            }
+
+            this.dgvJugadores.CurrentCell = null;
+        }
+
+        private void aplicarFormatoDataGridGanadores(DataGridView dgView, Boolean bReadOnly = true)
+        {
+            dgView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgView.ScrollBars = ScrollBars.Both;
+            dgView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgView.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromKnownColor(System.Drawing.KnownColor.DarkSeaGreen);
+            dgView.AllowUserToResizeRows = false;
+            dgView.MultiSelect = false;
+            dgView.ReadOnly = bReadOnly;
+            dgView.RowHeadersVisible = false;
+        }
+
+        private void crearColumnaGridGanadores(String nombreBD, String nombreMostrar, Int32 tamanio, DataGridView dataGrid, Boolean visible = true, Boolean bAlignmentRight = false, Boolean bAlignmentCenter = false)
+        {
+            DataGridViewTextBoxColumn Columna = new DataGridViewTextBoxColumn();
+            Columna.DataPropertyName = nombreBD;
+            Columna.Name = nombreBD;
+            Columna.HeaderText = nombreMostrar;
+
+            dataGrid.Columns.Add(Columna);
+            dataGrid.Columns[nombreBD].Width = tamanio;
+            dataGrid.Columns[nombreBD].Visible = visible;
+
+            if (bAlignmentRight)
+            {
+                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+            if (bAlignmentCenter)
+            {
+                dataGrid.Columns[nombreBD].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGrid.Columns[nombreBD].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            }
+
+            Columna.ReadOnly = false;
+            dataGrid.Columns[nombreBD].ReadOnly = false;
+        }
+
+        #endregion
+
+
+
+
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
