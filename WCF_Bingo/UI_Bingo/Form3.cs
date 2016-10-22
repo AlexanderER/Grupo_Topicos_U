@@ -115,7 +115,6 @@ namespace UI_Bingo
 
         #region Metodos
 
-        // otro commit
         private String obtenerLetraNumeroFavorecido(Int32 p_sInumero)
         {
             String sLetra = "";
@@ -162,53 +161,6 @@ namespace UI_Bingo
             return sLetra;
         }
 
-        //
-
-        private String obtenerLetraNumeroFavorecido2(Int32 p_sInumero)
-        {
-            String sLetra = "";
-
-            Int32 iRango = (clsGlobal.iLimiteNumerosBingo / 5); // Divido entre cinco que son la cantidad de letras de "B I N G O"
-
-            if (p_sInumero <= (iRango * 1))   // LETRA B
-            {
-                sLetra = "B";
-            }
-            else
-            {
-                if (p_sInumero <= (iRango * 2))   // LETRA I
-                {
-                    sLetra = "I";
-                }
-                else
-                {
-                    if (p_sInumero <= (iRango * 3)) // LETRA N
-                    {
-                        sLetra = "N";
-                    }
-                    else
-                    {
-                        if (p_sInumero <= (iRango * 4)) // LETRA G
-                        {
-                            sLetra = "G";
-                        }
-                        else
-                        {
-                            if (p_sInumero <= (iRango * 5)) // LETRA O
-                            {
-                                sLetra = "O";
-                            }
-                            else
-                            {
-                                sLetra = "";
-                            }
-                        }
-                    }
-                }
-            }
-
-            return sLetra;
-        }
 
         private void RefrescarDataGridNumFavorecidos()
         {
