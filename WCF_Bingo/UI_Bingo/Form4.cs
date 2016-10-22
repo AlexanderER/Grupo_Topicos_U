@@ -65,7 +65,7 @@ namespace UI_Bingo
             List<WCF_Bingo.Clases.clsCelda> temp;
             miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
             WCF_Bingo.Clases.clsCarton carton = new WCF_Bingo.Clases.clsCarton();
-              carton=  WCF_Service.consultarCarton(clsGlobal.ListaJugador, Convert.ToInt32(cmbNumJugador.Text), Convert.ToInt32(cmbNumCarton.Text));
+            carton=  WCF_Service.consultarCarton(clsGlobal.ListaJugador, Convert.ToInt32(cmbNumJugador.Text), Convert.ToInt32(cmbNumCarton.Text)-1);
             temp = carton.Columnas[0];
             lbl00.Text = Convert.ToString(temp[0].Numero);
             lbl01.Text = Convert.ToString(temp[1].Numero);
