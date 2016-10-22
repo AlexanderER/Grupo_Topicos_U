@@ -73,6 +73,7 @@ namespace UI_Bingo
             if (txtNumeroCartones.Text.Equals("") | (cmbNumeroJugadores.SelectedIndex.Equals(null))) { MessageBox.Show("No ha ingresado valores válidos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1); }
             else
             {
+               
                 txtNumeroJugadores.Enabled = false;
                 cmbTiposJuego.Enabled = false;
                 txtNumeroCartones.Text = "";
@@ -85,7 +86,7 @@ namespace UI_Bingo
                 WCF_Bingo.Clases.clsJugador[] arrayDeJugadores = new WCF_Bingo.Clases.clsJugador[clsGlobal.ListaJugador.Count];
                 //clsGlobal.ListaJugador.CopyTo(arrayDeJugadores);
                 clsGlobal.ListaJugador.CopyTo(arrayDeJugadores);
-                clsGlobal.ListaJugador.Add(WCF_Service.crearJugador(arrayDeJugadores,this.cmbNumeroJugadores.SelectedIndex+1,Convert.ToInt32(this.txtNumeroCartones.Text),clsGlobal.iLimiteNumerosBingo,clsGlobal.iModalidadJuego);
+                clsGlobal.ListaJugador.Add(WCF_Service.crearJugador(arrayDeJugadores,this.cmbNumeroJugadores.SelectedIndex+1,Convert.ToInt32(this.txtNumeroCartones.Text),clsGlobal.iLimiteNumerosBingo,clsGlobal.iModalidadJuego));
 
                 //jugador = WCF_Service.crearJugador();
                // iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, arrayDeNumeros);
