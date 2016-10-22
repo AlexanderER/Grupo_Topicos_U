@@ -48,12 +48,12 @@ namespace UI_Bingo
                 {
                     //----------------------------------------------------------------------------------------   Obtengo el Numero 
                     // Traslado la lista a un arreglo ya que el metodo solicita un arreglo
-                    Int32[] arrayDeNumeros = new Int32[clsGlobal.ListaNumerosFavorecidos.Count];
-                    clsGlobal.ListaNumerosFavorecidos.CopyTo(arrayDeNumeros);
+                    //Int32[] arrayDeNumeros = new Int32[clsGlobal.ListaNumerosFavorecidos.Count];
+                    //clsGlobal.ListaNumerosFavorecidos.CopyTo(arrayDeNumeros);
 
                     // Instancio el WCF y ejecuto el proceso de obtener numero
                     miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
-                    Int32 iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, arrayDeNumeros);
+                    Int32 iNumeroObtenido = WCF_Service.GenerarNumero(clsGlobal.iLimiteNumerosBingo, clsGlobal.ListaNumerosFavorecidos);
 
                     // Agrego el numero a la Lista de Numero Favorecidos
                     clsGlobal.ListaNumerosFavorecidos.Add(iNumeroObtenido);
