@@ -59,5 +59,22 @@ namespace UI_Bingo
             //    this.cmbNumCarton.Items.Add(i + 1);
             //}
         }
+
+        private void cmbNumCarton_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<WCF_Bingo.Clases.clsCelda> temp;
+            miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
+            WCF_Bingo.Clases.clsCarton carton = new WCF_Bingo.Clases.clsCarton();
+              carton=  WCF_Service.consultarCarton(clsGlobal.ListaJugador, Convert.ToInt32(cmbNumJugador.Text), Convert.ToInt32(cmbNumCarton.Text));
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 5; j++) {
+                    temp = carton.Columnas[i];
+                   // carton.[x].ListaCartones[i].Columnas[p][q].Numero == jugador.ListaCartones[z].Columnas[p][q].Numero))
+                    lbl00.Text = Convert.ToString(temp[j]);
+                }
+            }
+
+
+        }
     }
 }

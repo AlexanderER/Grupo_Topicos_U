@@ -53,7 +53,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl00 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbNumCarton = new System.Windows.Forms.ComboBox();
@@ -90,7 +90,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lbl00);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbNumCarton);
@@ -310,14 +310,14 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             // 
-            // label3
+            // lbl00
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 209);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.lbl00.AutoSize = true;
+            this.lbl00.Location = new System.Drawing.Point(53, 209);
+            this.lbl00.Name = "lbl00";
+            this.lbl00.Size = new System.Drawing.Size(29, 13);
+            this.lbl00.TabIndex = 6;
+            this.lbl00.Text = "lbl00";
             // 
             // label2
             // 
@@ -346,6 +346,7 @@
             this.cmbNumCarton.Name = "cmbNumCarton";
             this.cmbNumCarton.Size = new System.Drawing.Size(121, 21);
             this.cmbNumCarton.TabIndex = 3;
+            this.cmbNumCarton.SelectedIndexChanged += new System.EventHandler(this.cmbNumCarton_SelectedIndexChanged);
             // 
             // cmbNumJugador
             // 
@@ -420,7 +421,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl00;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
