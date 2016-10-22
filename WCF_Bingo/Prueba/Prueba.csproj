@@ -64,10 +64,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCrearJugador.cs" />
     <Compile Include="TestActualizarEstados.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestConsultarCarton.cs" />
     <Compile Include="TestCantidadCartonesXJugador.cs" />
     <Compile Include="SuccessCrearJugador.cs" />
     <Compile Include="SuccessEstado.cs" />
+    <Compile Include="SuccessCantCarXJug.cs" />
+    <Compile Include="SuccessConsultarCarton.cs" />
+    <Compile Include="SuccessGanadores.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

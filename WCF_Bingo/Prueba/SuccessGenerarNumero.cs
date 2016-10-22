@@ -9,7 +9,7 @@ namespace Prueba
     public class SuccessGenerarNumero
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GenerarNumeroSuccess()
         {
             Int32 numeroTecho = 5;
 
