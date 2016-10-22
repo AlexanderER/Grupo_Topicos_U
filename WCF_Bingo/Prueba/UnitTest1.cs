@@ -22,7 +22,7 @@ namespace Prueba
             Int32 resultado = servicio.GenerarNumero(numeroTecho, lista);
 
             Assert.AreEqual(resultado, numeroEsperado);
-
+            
         }
     }
 }
