@@ -59,11 +59,27 @@ namespace UI_Bingo
             if (txtNumeroCartones.Text.Equals("") | (cmbNumeroJugadores.SelectedIndex.Equals(null))) { MessageBox.Show("No ha ingresado valores válidos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1); }
             else
             {
-                //-------------------------------------------------------------------------------------------------
-                // Defino los parametros del Juego
+                //-------------------------------------------------------------------------------------------   Defino los parametros del Juego 
                 clsGlobal.iLimiteNumerosBingo = Convert.ToInt32(txtNumMax.Text);    // Cantidad Maxima de Numeros
-                clsGlobal.iModalidadJuego = cmbTiposJuego.SelectedIndex + 1;
+                clsGlobal.iModalidadJuego     = cmbTiposJuego.SelectedIndex + 1;    // Defino la Modalidad de Juego
 
+
+
+                //-------------------------------------------------------------------------------------------   Agregar Jugador
+                miServicio.Service1Client WCF_Service = new miServicio.Service1Client();    // Instancio el Sevicio
+                List<WCF_Bingo.Clases.clsJugador> listaRespaldo = clsGlobal.ListaJugador;   // Lista de respaldo por si da alguna excepcion restaurar la ultima version
+
+                //clsGlobal.ListaJugador.Clear(); // Limpio la Lista Global (Omitir)
+
+                String sTempJuga = this.cmbNumeroJugadores.Text;
+                String sTempCart = this.txtNumeroCartones.Text;
+
+                Int32 iNumeroUsuario = Convert.ToInt32(sTempJuga);                //this.cmbNumeroJugadores.SelectedIndex + 1;
+                Int32 iNumCartonesJugador = Convert.ToInt32(sTempCart);  //Convert.ToInt32(this.txtNumeroCartones.Text);
+
+                clsGlobal.ListaJugador = WCF_Service.crearJugador(clsGlobal.ListaJugador, iNumeroUsuario, iNumCartonesJugador, clsGlobal.iLimiteNumerosBingo, clsGlobal.iModalidadJuego);
+
+                MessageBox.Show("El jugador " + iNumeroUsuario.ToString() + " se agrego exitosamente.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 //--------------------------------------------------------------------------------------------------
@@ -73,24 +89,6 @@ namespace UI_Bingo
                 txtNumeroCartones.Text     = "";
                 txtNumMax.Enabled          = false;
                 cmbNumeroJugadores.Items.RemoveAt(cmbNumeroJugadores.SelectedIndex);
-
-
-
-                //-------------------------------------------------------------------------------------------   Agregar Jugador
-
-
-                miServicio.Service1Client WCF_Service = new miServicio.Service1Client();
-
-                List<WCF_Bingo.Clases.clsJugador> listaRespaldo = clsGlobal.ListaJugador;   // Lista de respaldo por si da alguna excepcion restaurar la ultima version
-
-                //clsGlobal.ListaJugador.Clear(); // Limpio la Lista Global.
-
-                Int32 iNumeroUsuario      = 1;  //this.cmbNumeroJugadores.SelectedIndex + 1;
-                Int32 iNumCartonesJugador = 1;  //Convert.ToInt32(this.txtNumeroCartones.Text);
-
-                clsGlobal.ListaJugador = WCF_Service.crearJugador(clsGlobal.ListaJugador, iNumeroUsuario, iNumCartonesJugador, clsGlobal.iLimiteNumerosBingo, clsGlobal.iModalidadJuego);
-
-                MessageBox.Show("Jugador " + iNumeroUsuario.ToString() + " se agrego exitosamente.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             if (cmbNumeroJugadores.Items.Count == 0) {
