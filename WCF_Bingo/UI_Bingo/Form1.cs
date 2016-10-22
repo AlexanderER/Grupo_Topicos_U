@@ -35,7 +35,7 @@ namespace UI_Bingo
 
             if (clsGlobal.ListaJugador.Count == 0)
             {
-                MessageBox.Show("El juego no se ha creado, inicialicelo para habilitar esta opcion", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El juego no se ha creado, inicialícelo para habilitar esta opción.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else { 
             Form3 ventana = new Form3();
