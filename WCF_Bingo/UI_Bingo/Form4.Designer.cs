@@ -354,6 +354,7 @@
             this.cmbNumJugador.Name = "cmbNumJugador";
             this.cmbNumJugador.Size = new System.Drawing.Size(121, 21);
             this.cmbNumJugador.TabIndex = 2;
+            this.cmbNumJugador.SelectedIndexChanged += new System.EventHandler(this.cmbNumJugador_SelectedIndexChanged);
             this.cmbNumJugador.Leave += new System.EventHandler(this.cmbNumJugador_Leave);
             // 
             // button1
