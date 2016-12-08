@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo_Peliculas_Model", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo_Peliculas_BL", "Modulo_Peliculas_BL\Modulo_Peliculas_BL.csproj", "{B45B737A-EDC5-46E6-A6F9-08983308B983}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo_Peliculas_Repository", "Modulo_Peliculas_Repository\Modulo_Peliculas_Repository.csproj", "{8666244B-E7AD-429C-8F4D-F79E3AE81E02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B45B737A-EDC5-46E6-A6F9-08983308B983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B45B737A-EDC5-46E6-A6F9-08983308B983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B45B737A-EDC5-46E6-A6F9-08983308B983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8666244B-E7AD-429C-8F4D-F79E3AE81E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8666244B-E7AD-429C-8F4D-F79E3AE81E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8666244B-E7AD-429C-8F4D-F79E3AE81E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8666244B-E7AD-429C-8F4D-F79E3AE81E02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
